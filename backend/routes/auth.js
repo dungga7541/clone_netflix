@@ -10,6 +10,7 @@ router.post("/register",async (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password:CryptoJS.AES.encrypt(req.body.password,process.env.SECRET_KEY).toString(),
+        profilePic: req.body.profilePic,
     });
     try{
         const user =await newUser.save();

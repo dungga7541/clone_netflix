@@ -15,13 +15,13 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    proficePic:{
+    profilePic:{
         type:String,
         default:""
     },
     isAdmin:{
         type:Boolean,
-        default:true
+        default:false
     },
 },{timestamps : true}
 );

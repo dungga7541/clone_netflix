@@ -1,0 +1,33 @@
+@import '~video-react/styles/scss/video-react'; // or import scss
+
+.movieList {
+
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 30%;
+    table{
+  
+      border: 1px solid black;
+      tr{
+        border: 1px solid black;
+        height: 70px;
+        
+      }
+      td{
+        text-align: center;
+        border: 1px solid black;
+        img{
+          background-repeat: no-repeat;
+          width: 100%;
+        }
+      }
+      th{
+        color:white;
+        background-color: rgb(20, 20, 20);
+        padding: 20px 40px;
+      }
+    }
+  
+  }
+  

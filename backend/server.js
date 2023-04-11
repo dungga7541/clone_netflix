@@ -2,6 +2,9 @@ const express = require('express');
 const app =express();
 const mongoose = require('mongoose');
 const dotenv = require("dotenv");
+const  cors = require('cors')
+
+
 const authRoute = require("./routes/auth.js");
 const userRoute = require("./routes/users.js");
 const movieRoute = require("./routes/movies.js");
@@ -17,6 +20,7 @@ mongoose.connect(process.env.MONGODB_URL ,{
 }).then(()=>console.log("DB connection successfully"));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
+app.use(cors())
 
 
 app.use("/api/auth",authRoute)

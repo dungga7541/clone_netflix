@@ -5,17 +5,25 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useContext, useState } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
+import imgUser from "../../assets/image/f53815f7-4cb8-48f8-b0c1-b9cdf0e34854.jpg";
 
 const Navbar = () => {
+	const [isScrolled,setIsScrolled] = useState(false);
+
+	window.onscroll =()=>{
+		setIsScrolled(window.pageYOffset=== 0?false:true);
+		return ()=> (window.onscroll = null);
+	}
 	return (
-		<div className="navbar">
+		<div className={isScrolled ? "navbar scrolled": "navbar"}>
 			<div className='navbarContent'>
 				<div className="left">
-					<img
+					<span><img
 						src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
 						alt=""
 						className='logo'
-					/>
+					/></span>
+					
 					<Link to="/" className="link">
 						<span>Homepage</span>
 					</Link>
@@ -30,18 +38,17 @@ const Navbar = () => {
 				</div>
 				<div className="right">
 					<SearchOutlinedIcon className="icon" />
-					<span>KID</span>
 					<NotificationsIcon className="icon" />
 					<img
-						src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+						src={imgUser}
 						alt=""
 						className='imgUser'
 					/>
-					<div className="profile">
+					<div className="profileUser">
 						<ArrowDropDownIcon className="icon" />
 						<div className="options">
-							<span>Settings</span>
-							<span >Logout</span>
+							<span>Cài Đặt</span>
+							<span >Đăng Xuất</span>
 						</div>
 					</div>
 				</div>

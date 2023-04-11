@@ -70,4 +70,16 @@ router.delete("/:id", verify, async (req, res) => {
     }
 })
 
+
+//GET
+router.get("/find/:id", verify, async (req, res) => {
+
+    try {
+        const list = await List.findById(req.params.id);
+        res.status(200).json(list);
+    } catch (err) {
+        res.status(500).send(err);
+    } 
+
+});
 module.exports = router;

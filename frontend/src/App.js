@@ -5,11 +5,13 @@ import Watch from './pages/Watch/Watch';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import { toast } from 'react-toastify';
+import { useContext } from "react";
 
 
 
 function App() {
-  const user = true;
+  const user =true;
+  // const {user} =useContext(AuthContext);
 
   return (
     <div className="App">
@@ -24,10 +26,6 @@ function App() {
             <Route path="/movies" element={<Home type="movies" />} />
             <Route path="/series" element={<Home type="series" />} />
             <Route path="/watch" element={<Watch />} />
-
-            <Route path="/" element={<Home />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/" element={<Home />} />
           </>
         )}
       </Routes>

@@ -1,0 +1,19 @@
+@import '~video-react/styles/scss/video-react'; // or import scss
+
+.newMovie{
+    display: flex;
+    form{
+        border: 2px solid black;
+        .aaa{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            
+        }
+        button{
+            background-color: aquamarine;
+        }
+    }
+
+
+}
