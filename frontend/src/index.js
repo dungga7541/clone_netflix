@@ -4,15 +4,24 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import AuthContextProvider from "./context/authContext/authContext";
+import { AuthContextProvider } from './context/authContext/authContext';
+import { MovieContextProvider } from './context/movieContext/movieContext';
+import { ListContextProvider } from './context/listContext/listContext';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <React.StrictMode>
-    <BrowserRouter>
-        <App />
-        <ToastContainer />
-    </BrowserRouter>
+    <AuthContextProvider>
+      <MovieContextProvider>
+        <ListContextProvider>
+          <BrowserRouter>
+            <App />
+            <ToastContainer />
+          </BrowserRouter>
+        </ListContextProvider>
+      </MovieContextProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 
 );

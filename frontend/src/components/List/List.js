@@ -7,7 +7,7 @@ import "./List.scss";
 const List = ({ list }) => {	
 	return (
 		<div className="list">
-			<span className="listTitle">{list.title}</span>
+			<h1 className="listTitle">{list.title}</h1>
 			<div className="wrapper">
 
 				<div className="container" >

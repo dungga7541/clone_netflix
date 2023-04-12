@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
 import List from '../../components/List/List';
+import Footer from './../../components/Footer/Footer';
 
 const Home = ({ type }) => {
 	const [lists, setLists] = useState([]);
@@ -13,7 +14,7 @@ const Home = ({ type }) => {
 	useEffect(() => {
 		const getRandomList = async () => {
 			try {
-				const res = await axios.get(`lists${type ? "?type=" + type : ""} ${genre ? "&genre=" + genre : ""}`
+				const res = await axios.get(`http://localhost:8000/api/lists${type ? "?type=" + type : ""} ${genre ? "&genre=" + genre : ""}`
 					, {
 						headers: {
 							token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
@@ -37,6 +38,7 @@ const Home = ({ type }) => {
 					<List key={i} list={list} />
 				))}
 			</div>
+			<Footer/>
 		</div>
 	);
 };

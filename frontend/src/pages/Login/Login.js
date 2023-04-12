@@ -1,7 +1,23 @@
-import React from 'react';
+import React,{useState,useContext} from 'react';
 import { Link } from 'react-router-dom';
 import "./Login.scss";
+import { login } from '../../context/authContext/apiCalls';
+import { AuthContext } from './../../context/authContext/authContext';
+
 const Login = () => {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const { isFetching, dispatch } = useContext(AuthContext);
+
+	const signIn = async (e) => {
+		try {
+			e.preventDefault();
+			e.stopPropagation();
+			login({ email, password }, dispatch)
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	return (
 		<div className="login">
 
@@ -26,13 +42,15 @@ const Login = () => {
 								type="email"
 								placeholder="Email or phone number"
 								className='inputField'
+								onChange={(event) => { setEmail(event.target.value) }}
 							/>
 							<input
 								type="password"
 								placeholder="Password"
 								className='inputField'
+								onChange={(event) => { setPassword(event.target.value) }}
 							/>
-							<button className="loginButton" >
+							<button className="loginButton" onClick={signIn}>
 								Đăng nhập
 							</button>
 							<div className='rememberMe'>

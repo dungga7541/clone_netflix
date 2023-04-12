@@ -1,0 +1,44 @@
+.footer{
+    color: white;
+
+    background-color: rgb(20,20,20);
+    padding:8% 25% 3% 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .topFooter{
+        .socialNetwork{
+            .title{
+                
+            }
+            .icon{
+                margin-top: 1rem;
+                display: flex;
+                span{
+                    padding: 0 10px 0 0;
+                }
+            }
+        }
+    }
+    .centerFooter{
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        .columns{
+            display: flex;
+            flex-direction: column;
+            p{
+                padding: 10px 10px 10px 0;
+            }
+        }
+    }
+    .bottomFooter{
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        .buttonService{
+            padding: 20px 0;
+
+        }
+    }
+}

@@ -4,8 +4,7 @@ import YouTube, { YouTubeProps } from 'react-youtube';
 import "./Watch.scss";
 
 const Watch = () => {
-  const location = useLocation();
-  const movie = location.movie;
+
   const opts = {
     height: '100%',
     width: '100%',

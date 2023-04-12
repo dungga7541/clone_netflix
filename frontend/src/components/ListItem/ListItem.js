@@ -1,10 +1,5 @@
 import "./ListItem.scss";
-import {
-	PlayArrow,
-	Add,
-	ThumbUpAltOutlined,
-	ThumbDownOutlined,
-} from "@material-ui/icons";
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -17,7 +12,7 @@ export default function ListItem({ index, item }) {
 	useEffect(() => {
 		const getMovie = async () => {
 			try {
-				const res = await axios.get("/movies/find/" + item, {
+				const res = await axios.get("http://localhost:8000/api/movies/find/" + item, {
 					headers: {
 						token:
 							"Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,

@@ -6,14 +6,29 @@ import { useContext, useState } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import imgUser from "../../assets/image/f53815f7-4cb8-48f8-b0c1-b9cdf0e34854.jpg";
+import { AuthContext } from './../../context/authContext/authContext';
+import { logout } from '../../context/authContext/apiCalls';
+
 
 const Navbar = () => {
 	const [isScrolled,setIsScrolled] = useState(false);
-
+	const { isFetching, dispatch } = useContext(AuthContext);
+	const { user } = useContext(AuthContext);
 	window.onscroll =()=>{
 		setIsScrolled(window.pageYOffset=== 0?false:true);
 		return ()=> (window.onscroll = null);
 	}
+
+
+	const Logout = async (e) => {
+		try {
+			e.preventDefault();
+			e.stopPropagation();
+			logout(null,dispatch)
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	return (
 		<div className={isScrolled ? "navbar scrolled": "navbar"}>
 			<div className='navbarContent'>
@@ -48,7 +63,7 @@ const Navbar = () => {
 						<ArrowDropDownIcon className="icon" />
 						<div className="options">
 							<span>Cài Đặt</span>
-							<span >Đăng Xuất</span>
+							<span onClick={Logout}>Đăng Xuất</span>
 						</div>
 					</div>
 				</div>
