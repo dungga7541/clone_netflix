@@ -1,30 +1,21 @@
 import React, { useEffect, useState,useContext} from 'react';
 import "./UserList.scss";
-import axios from "axios";
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
-import Sidebar from '../../../components/SideBar/SideBar';
+import imgUser from "../../../assets/image/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg";
+import { UserContext } from '../../../context/userContext/userContext';
+import { deleteUser, getUsers } from './../../../context/userContext/apiCalls';
 
 const UserList = () => {
-	const [userList, setAllUsers] = useState([]);
+	const { users, dispatch } = useContext(UserContext);
 	useEffect(() => {
-		const getAllUsers = async () => {
-			try {
-				const res = await axios.get("http://localhost:8000/api/users", {
-					headers: {
-						token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
-					},
-				})
-				setAllUsers(res.data);
-			} catch (err) {
-				console.log(err);
-			}
-		}
-		getAllUsers()
-	}, []);
+		getUsers(dispatch);
+	}, [dispatch])
+	const handleDelete = (id) => {
+		deleteUser(id, dispatch);
+	}
 	return (
 		<div className='userList'>
-					<Sidebar/>
 
 			<div>
 				<table>
@@ -37,17 +28,17 @@ const UserList = () => {
 							<th>Img</th>
 							<th>Action</th>
 						</tr>
-						{userList.map((user,i) => {
+						{users.map((user,i) => {
 							return (
 								<tr key={user._id}>
 									<td>{i}</td>
 									<td>{user.username}</td>
 									<td>{user.email}</td>
 									<td>{user.isAdmin ? <CheckIcon style={{color:'green'}}/> : <CloseIcon style={{color:'red'}}/>}</td>
-									<td><img src={user.profilePic} alt={user.profilePic}/></td>
+									<td><img src={(user.profilePic) !== "" ? (user.profilePic):(imgUser)} alt={user.profilePic}/></td>
 									<td>
-										<button>edit</button>
-										<button>delete</button>
+										<button className='btn btnEdit'>Edit</button>
+										<button className='btn btnDelete' onClick={()=>handleDelete(user._id)}>Delete</button>
 									</td>
 								</tr>
 							)

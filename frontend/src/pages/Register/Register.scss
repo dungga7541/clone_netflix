@@ -1,278 +1,108 @@
-.register{
+.login{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     flex: 1;
-    
-    .totalContainer{
-        width: 100%;
+    .container{
         
-        .firstContainer{
-            width: 100%;
-            height: auto;
-            background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/2e884ce2-da1c-4501-ab9a-10c534d30975/e2a8204b-4c6a-436e-80b8-4e81e3fcc065/VN-en-20230327-popsignuptwoweeks-perspective_alpha_website_large.jpg");
-            background-position: center;
-            background-repeat: none;
-            background-size: cover;
-            box-sizing: border-box;
+        width: 100%;
+        height: 100vh;
+        background-image: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW92aWUlMjB0aGVhdGVyfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+        background-position: center;
+        background-repeat: none;
+        background-size: cover;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        opacity: 1.5;
+        .contentContainer{
+            padding: 0 10%;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+            height: 100vh;
+            width: 100vw;
             display: flex;
             flex-direction: column;
-            .contentContainer{
-                    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
-                flex: 1;
-                padding: 0 10%;
-
-                .top{
-                    height: 5rem;
+            .top{
+                height: 5rem;
+                display: flex;
+                align-items: center;
+            }
+            .formLogin{
+                background-color: rgba(15, 15, 15, 0.85);
+                padding: 60px 68px 40px;
+                margin: 0 auto;
+                border-radius: 4px;
+                width: 30%;
+                form{
                     display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    .loginButton{
-                        padding: 10px 15px;
-                        background-color: #E50914;
-                        color: #ffffff;
-                        border: none;
-                        border-radius:3px;
-                    }
-                }
-                .bottom{
-                    padding: 12% 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
                     flex-direction: column;
-                    flex-wrap: wrap;
-                    height: 100%;
-                    color: #ffffff;
-                    p{
-                        padding: 10px 0;
-                    }
-                    .mainTitle{
+                    justify-content: center;
+                    h1{
                         font-weight: 900;
-                        font-size: 3rem;
+                        color: white;
+                        font-size: 36px;
+                        padding: 20px 0;
                     }
-                    .subTitle{
-                        font-weight: 700;
-                        font-size: 1.5rem;
-                    }
-                    .otherTitle{
-                        font-weight: 700;
-                        font-size: 1.25rem;
-                        line-height: 1.875rem;
-                    }
-                    .searchBar{
-                        width: 50%;
-                        background-color: white;
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        margin-top: 20px;
+                    .inputField{
+                        border: 0;
+                        border-radius: 4px;
+                        color: #fff;
                         height: 50px;
-                        border-radius: 5px;
-                        input{
-                            flex: 9;
-                            height: 100%;
-                            border: none;
-                            padding: 0 10px;
-                        }
-                        .registerButton{
+                        line-height: 50px;
+                        padding: 16px 20px 0;
+                        background: #333;
+                        margin: 10px 0;
+                    }
+                    .loginButton{
+                        border-radius: 4px;
+                        font-weight: 500;
+                        margin: 24px 0 12px;
+                        background: #e50914;
+                        height: 50px;
+                        font-size: 18px;
+                        padding: 16px;
+                        color: white;
+                        text-align: center;
+                    }
+                    .rememberMe{
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 13px;
+                        font-weight: 400;
+                        color: #b3b3b3;
+                        align-items: center;
+                        padding: 5px 0;
+                        .remember{
                             display: flex;
-                            align-items: center;
-                            height: 100%;
-                            padding: 0 10px;
-                            background-color: #E50914;
-                            color: #ffffff;
+                        }
+                    }
+
+                    .moreOptions{
+                        display: flex;
+                        flex-direction: column;
+                        padding: 60px 0;
+                        span{
+                            color: #737373;
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
+                        small{
+                            color: #8c8c8c;
+                            font-size: 13px;
+                            margin-top: 20px;
+                            b{
+                                background-color: transparent;
                             border: none;
-                            border-radius:3px;
-                            font-weight: 700;
-                            font-size: 1.25rem;
-                            line-height: 1.875rem;
-                        }
-        
-                    }
-            }
-            
-            }
-        }
-        
-        .secondContainer{
-            width: 100%;
-            
-            display: flex;
-            align-items: center;
-            color: white;
-            background-color: black;
-            padding: 8% 10%;
-
-            .title{
-                flex: 0.5;
-                .mainTitle{
-                    padding: 10px 0;
-                    font-weight: 900;
-                    font-size: 3rem;
-                }
-                .subTitle{
-                    padding: 10px 0;
-
-                    font-weight: 700;
-                    font-size: 1.5rem;
-                }
-            }
-            .slideVideo{
-                flex: 0.5;
-                background-color: black;
-                position: relative;
-                img{
-                    position: relative;
-                    z-index: 2;
-                    
-                }
-                video{
-                    position: absolute;
-                    z-index: 1;
-                    width: 65%;
-                    height: 50%;
-                    left: 10%;
-                    top: 44%;
-                    -webkit-transform: translateY(-50%);
-                    -moz-transform: translateY(-50%);
-                    -ms-transform: translateY(-50%);
-                    transform: translateY(-50%);
-                    pointer-events: none;
-
-                }
-            }
-        }
-        .thirdContainer{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            color: white;
-            background-color: black;
-            padding: 2% 10%;
-
-            .imgDowload{
-                flex: 0.5;
-                position: relative;
-
-                .dowloadFilm{
-                    position: absolute;
-                    z-index: 1;
-                    width: 50%;
-                    height: 25%;
-                    left: 18%;
-                    top: 75%;
-                    padding: 5px;
-                    -webkit-transform: translateY(-50%);
-                    -moz-transform: translateY(-50%);
-                    -ms-transform: translateY(-50%);
-                    transform: translateY(-50%);
-                    justify-content: space-between;
-                    display: flex;
-                    align-items: center;
-                    padding: 5px;
-                    border: 2px solid gray;
-                    border-radius: 8px;
-                    background-color: black;
-                    .title{
-
-                        .mainTitle{
-                            padding: 2px 0;
-                        }
-                        .subTitle{
-                            padding: 2px 0;
                             color: #0071eb;
+                            cursor: pointer;
+                            display: inline;
+                            font-family: inherit;
+                            font-size: inherit;
+                            padding: 0;
+                            }
                         }
                     }
-                }
-            }
-            .titleDowload{
-                flex: 0.5;
-                .mainTitle{
-                    padding: 10px 0;
-                    font-weight: 900;
-                    font-size: 3rem;
-                }
-                .subTitle{
-                    padding: 10px 0;
-
-                    font-weight: 700;
-                    font-size: 1.5rem;
-                }
-            }
-        }
-        .fourContainer{
-            width: 100%;
-            
-            display: flex;
-            align-items: center;
-            color: white;
-            background-color: black;
-            padding: 8% 10%;
-
-            .title{
-                flex: 0.5;
-                .mainTitle{
-                    padding: 10px 0;
-                    font-weight: 900;
-                    font-size: 3rem;
-                }
-                .subTitle{
-                    padding: 10px 0;
-
-                    font-weight: 700;
-                    font-size: 1.5rem;
-                }
-            }
-            .slideVideo{
-                flex: 0.5;
-                background-color: black;
-                position: relative;
-                img{
-                    position: relative;
-                    z-index: 2;
-                    
-                }
-                video{
-                    position: absolute;
-                    z-index: 1;
-                    width: 50%;
-                    height: 50%;
-                    left: 18%;
-                    top:36%;
-                    -webkit-transform: translateY(-50%);
-                    -moz-transform: translateY(-50%);
-                    -ms-transform: translateY(-50%);
-                    transform: translateY(-50%);
-                    pointer-events: none;
-                }
-            }
-        }
-        .fiveContainer{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            color: white;
-            background-color: black;
-            padding: 2% 10%;
-
-            .imgDowload{
-                flex: 0.5;
-                position: relative;
-            }
-            .titleDowload{
-                flex: 0.5;
-                .mainTitle{
-                    padding: 10px 0;
-                    font-weight: 900;
-                    font-size: 3rem;
-                }
-                .subTitle{
-                    padding: 10px 0;
-
-                    font-weight: 700;
-                    font-size: 1.5rem;
                 }
             }
         }

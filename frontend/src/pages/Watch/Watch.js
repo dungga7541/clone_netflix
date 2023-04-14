@@ -4,13 +4,17 @@ import YouTube, { YouTubeProps } from 'react-youtube';
 import "./Watch.scss";
 
 const Watch = () => {
-
+  const location = useLocation();
+  const movie = location.movie;
   const opts = {
     height: '100%',
     width: '100%',
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
+      'autoplay': 1,
+      'controls': 0,
+      'autohide': 1,
+      'wmode': 'opaque',
+      'origin': 'http://localhost:8100'
     },
   };
 

@@ -1,19 +1,62 @@
 @import '~video-react/styles/scss/video-react'; // or import scss
-
-.newMovie{
+.newMovie {
+    background-color: rgb(25, 28, 36);
     display: flex;
-    form{
-        border: 2px solid black;
-        .aaa{
+    margin: 2%;
+    width: 93%;
+    height: 93%;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 1.1rem;
+
+    form {
+        margin: 5%;
+        background-color: rgb(20, 20, 20);
+        width: 80%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-radius:20px ;
+        .columns{
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
+            justify-content: center;
+            .aaa {
+                padding-left: 60px;
+                padding-bottom: 20px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                input{
+                    padding: 10px 60px 10px 10px;
+                    border: none;
+                }
+                select{
+                    padding: 10px 60px 10px 10px;
+                    border: none;
+                    color: black;
+                }
+                div{
+                    padding: 20px;
+                }
+            }
+
+        }
+        .btnUpload{
+            display: flex;
+            justify-content: center;
+            .avc{
+                display: flex;
+                flex-direction: column;
+                .addProductButton{
+                    padding: 10px 15px;
+                    background-color: #28A745;
+                    border: none;
+                    border-radius: 10px;
+                }
+            }
             
         }
-        button{
-            background-color: aquamarine;
-        }
     }
-
-
 }

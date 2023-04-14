@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     position: fixed;
     width: 100%;
     z-index: 99;
@@ -8,69 +8,100 @@
     background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.5) 50%);
     display: flex;
     align-items: center;
-    &.scrolled{
-        background-color:rgb(20, 20, 20);
-
+    padding:0 1%;
+    &.scrolled {
+        background-color: rgb(20, 20, 20);
     }
-    .navbarContent{
+
+    .navbarContent {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         flex: 1;
         justify-content: space-between;
         align-items: center;
-        .left{
+
+        .left {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .logo{
-                width: 50px ;
-                height: 30px;
+
+            .logo {
+                width: 100px;
+                height: 60px;
             }
-            span{
+
+            span {
                 text-align: center;
-                padding: 20px;
+                padding: 10px 20px;
             }
         }
-        .right{
+
+        .right {
             gap: 1rem;
 
             display: flex;
             align-items: center;
-            .icon{
-                // padding: 0 20px;
-            }
-            .imgUser{
+            position: relative;
+
+            .searchBox {
+                position: relative;
                 
-                width: 35px ;
-                height: 35px;
-                border-radius: 5px;
-            }
-            .profileUser{
-                .options{
-                    display: none;
-                    background-color:rgb(20, 20, 20);
-                    border-radius: 5px;
-                    span{
-                        padding: 10px;
-                        cursor: pointer;
-                    }
+                .searchBtn{
+                    position: absolute;
+                    left: 80%;
+                    top:5%;
                 }
-                &:hover{
-                    .options{
-                        display: flex;
-                        flex-direction: column;
-                        position: absolute;
-                        padding: 0 20px;
-                        text-align: left;
-                        margin-top: 4px;
-                        
-                        right: 4px;
-                        left: auto;
-                    }
+                input[type="text"] {
+                    width: 150px;
+                    background-color: transparent;
+                    transition: width 1s ease-in-out;
+                    padding: 6px;
+                    border-radius: 8px;
+                    border: 1px solid white;
+                }
+                input[type="text"]:hover{
+                    width: 250px;
                 }
             }
 
+            .imgUser {
+                width: 35px;
+                height: 35px;
+                border-radius: 5px;
+            }
+
+            .profileUser {
+                .options {
+                    display: flex;
+                    flex-direction: column;
+                    background-color: rgba(15, 15, 15, 0.85);
+                    border-radius: 5px;
+                    position: absolute;
+                    z-index: 1;
+                    list-style-type: none;
+                    margin: 5px 0;
+                    right: 4px;
+                    left: auto;
+
+                    span {
+                        padding: 20px;
+                        cursor: pointer;
+                    }
+                }
+
+                // .options{
+                //     display: flex;
+                //     flex-direction: column;
+                //     position: absolute;
+                //     padding: 0 20px;
+                //     text-align: left;
+                //     margin-top: 4px;
+
+                //     right: 4px;
+                //     left: auto;
+                // }
+            }
         }
     }
 }

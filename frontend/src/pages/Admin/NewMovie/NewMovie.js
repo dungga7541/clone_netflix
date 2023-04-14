@@ -24,7 +24,6 @@ const NewMovie = () => {
 		setMovie({ ...movie, [e.target.name]: value });
 	}
 
-	console.log(uploaded)
 	const upload = (items) => {
 		items.forEach((item) => {
 			const fileName = new Date().getTime() + item.label + item.file.name;
@@ -67,76 +66,79 @@ const NewMovie = () => {
 	}
 	return (
 		<div className='newMovie'>
-					<Sidebar/>
-
 			<form>
-				<div className='aaa'>
-					<h1>image</h1>
-					<input type='file' id='img' name="img" onChange={e => setImg(e.target.files[0])} />
-				</div>
-				<div className='aaa'>
-					<h1>Title image</h1>
-					<input type='file' id='imgTitle' name="imgTitle" onChange={e => setImgTitle(e.target.files[0])} />
-				</div>
-				<div className='aaa'>
-					<h1>Thumbnail image</h1>
-					<input type='file' id='imgSm' name="imgSm" onChange={e => setImgSm(e.target.files[0])} />
-				</div>
-				<div className='aaa'>
-					<h1>Title</h1>
-					<input type='text' placeholder='title' name="title" onChange={handleChange} />
-				</div>
-				<div className='aaa'>
-					<h1>Description</h1>
-					<input type='text' placeholder='description' name="desc" onChange={handleChange} />
-				</div>
-				<div className='aaa'>
-					<h1>Year</h1>
-					<input type='text' placeholder='year' name="year" onChange={handleChange} />
-				</div>
-				<div className='aaa'>
-					<h1>Genre</h1>
-					<input type='text' placeholder='genre' name="genre" onChange={handleChange} />
-				</div>
-				<div className='aaa'>
-					<h1>Duration</h1>
-					<input type='text' placeholder='duration' name="duration" onChange={handleChange} />
-				</div>
-				<div className='aaa'>
-					<h1>Limit</h1>
-					<input type='text' placeholder='limit' name="limit" onChange={handleChange} />
-				</div>
-				<div className='aaa'>
-					<h1>Is Series</h1>
-					<select name="isSeries" id="isSeries" onChange={handleChange}>
-						<option value="false">No</option>
-						<option value="true">Yes</option>
-					</select>
-				</div>
-				<div className='aaa'>
-					<h1>Trailer</h1>
-					<input type='file' id='file' name="trailer" onChange={e => setTrailer(e.target.files[0])} />
-				</div>
-				<div className='aaa'>
-					<h1>Video</h1>
-					<input type='file' id='file' name="video" onChange={e => setVideo(e.target.files[0])} />
+				<div className='columns'>
+					<div className='aaa'>
+
+
+						<h1>Title</h1>
+						<input type='text' placeholder='title' name="title" onChange={handleChange} />
+
+						<h1>Description</h1>
+						<input type='text' placeholder='description' name="desc" onChange={handleChange} />
+
+						<h1>Year</h1>
+						<input type='text' placeholder='year' name="year" onChange={handleChange} />
+
+						<h1>Genre</h1>
+						<input type='text' placeholder='genre' name="genre" onChange={handleChange} />
+
+						<h1>Duration</h1>
+						<input type='text' placeholder='duration' name="duration" onChange={handleChange} />
+
+						<h1>Limit</h1>
+						<input type='text' placeholder='limit' name="limit" onChange={handleChange} />
+						<h1>Is Series</h1>
+						<select name="isSeries" id="isSeries" onChange={handleChange}>
+							<option value="false">No</option>
+							<option value="true">Yes</option>
+						</select>
+					</div>
+					<div className='aaa'>
+						<h1>image</h1>
+						<input type='file' id='img' name="img" onChange={e => setImg(e.target.files[0])} />
+
+						<h1>Title image</h1>
+						<input type='file' id='imgTitle' name="imgTitle" onChange={e => setImgTitle(e.target.files[0])} />
+
+						<h1>Thumbnail image</h1>
+						<input type='file' id='imgSm' name="imgSm" onChange={e => setImgSm(e.target.files[0])} />
+
+
+						<h1>Trailer</h1>
+						<input type='file' id='file' name="trailer" onChange={e => setTrailer(e.target.files[0])} />
+
+						<h1>Video</h1>
+						<input type='file' id='file' name="video" onChange={e => setVideo(e.target.files[0])} />
+					</div>
+
 				</div>
 				{uploaded === 5 ? (
-					<div>
-					<label className="addProductButton" style={{color:"green" ,backgroundColor:"wheat",padding:"3px"}}>
-						Đã Upload Xong
-					</label>
-					<button className="addProductButton" onClick={handleSubmit}>
-						Create Movie
-					</button></div>
+					<div className='btnUpload'>
+						<div className='avc'>
+							<button className="addProductButton" onClick={handleSubmit}>
+								Create Movie
+							</button>
+							<label style={{ color: "green" }}>
+								Đã Upload Xong
+							</label>
+						</div>
+
+
+					</div>
+
 				) : (
-					<div>
-					<label className="addProductButton" style={{color:"red" ,backgroundColor:"wheat",padding:"3px"}}>
-						Chưa Upload Xong
-					</label>
-					<button className="addProductButton" onClick={handleUpload}>
-						Upload Data
-					</button>
+					<div className='btnUpload'>
+						<div className='avc'>
+							<button className="addProductButton" onClick={handleUpload}>
+								Upload Data
+							</button>
+							<label style={{ color: "red" }}>
+								Chưa Upload Xong
+							</label>
+						</div>
+
+
 					</div>
 				)}
 			</form>

@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthContextProvider } from './context/authContext/authContext';
 import { MovieContextProvider } from './context/movieContext/movieContext';
 import { ListContextProvider } from './context/listContext/listContext';
+import { UserContextProvider } from './context/userContext/userContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,10 +16,12 @@ root.render(
     <AuthContextProvider>
       <MovieContextProvider>
         <ListContextProvider>
-          <BrowserRouter>
-            <App />
-            <ToastContainer />
-          </BrowserRouter>
+          <UserContextProvider>
+            <BrowserRouter>
+              <App />
+              <ToastContainer />
+            </BrowserRouter>
+          </UserContextProvider>
         </ListContextProvider>
       </MovieContextProvider>
     </AuthContextProvider>

@@ -1,0 +1,13 @@
+.homeAdmin{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    .sidebar{
+        flex: 0.12;
+    }
+    .content{
+        background-color: #000000;
+        flex: 0.88;
+        color: white;
+    }
+}

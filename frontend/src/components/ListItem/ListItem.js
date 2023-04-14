@@ -25,7 +25,6 @@ export default function ListItem({ index, item }) {
 		};
 		getMovie();
 	}, [item]);
-	console.log(movie.trailer)
 	return (
 		<Link to={{ pathname: "/watch", movie: movie }}>
 			<div

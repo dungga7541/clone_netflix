@@ -14,11 +14,13 @@
   
       select {
         cursor: pointer;
-        background-color: var(--main-color);
+        background-color: rgb(20,20,20);
         border: 1px solid white;
         color: white;
         margin-left: 20px;
         padding: 5px;
+      }::after{
+        
       }
     }
   

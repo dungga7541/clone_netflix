@@ -7,7 +7,7 @@ import axios from 'axios';
 import List from '../../components/List/List';
 import Footer from './../../components/Footer/Footer';
 
-const Home = ({ type }) => {
+const Home = ({ type,user }) => {
 	const [lists, setLists] = useState([]);
 	const [genre, setGenre] = useState(null);
 
@@ -21,17 +21,15 @@ const Home = ({ type }) => {
 						}
 					});
 				setLists(res.data);
-
 			} catch (err) {
 				console.error(err);
 			}
 		};
 		getRandomList();
 	}, [type, genre]);
-	console.log("dsadasd",lists)
 	return (
 		<div className="home">
-			<Navbar />
+			<Navbar user={user}/>
 			<div className='content'>
 				<Featured type={type} setGenre={setGenre} />
 				{lists.map((list,i) => (

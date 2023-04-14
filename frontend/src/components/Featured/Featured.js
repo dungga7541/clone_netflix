@@ -4,8 +4,9 @@ import axios from 'axios';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import "./Featured.scss";
+import { Link } from 'react-router-dom';
 
-const Featured = ({ type }) => {
+const Featured = ({ type,setGenre }) => {
 	const [content, setContent] = useState({});
 
 	useEffect(() => {
@@ -32,7 +33,7 @@ const Featured = ({ type }) => {
 						<select
 							name="genre"
 							id="genre"
-							// onChange={(e) =>setGenre(e.target.value)}
+							onChange={(e) =>setGenre(e.target.value)}
 						>
 							<option>Genre</option>
 							<option value="adventure">Adventure</option>
@@ -58,16 +59,6 @@ const Featured = ({ type }) => {
 				<h2 className="desc">
 					{content.desc}
 				</h2>
-				<div className="buttons">
-					<button className="play">
-						<PlayArrowIcon />
-						<span>Play</span>
-					</button>
-					<button className="more">
-						<InfoOutlinedIcon />
-						<span>Info</span>
-					</button>
-				</div>
 			</div>
 
 		</div>

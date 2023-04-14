@@ -3,6 +3,12 @@ import "./SideBar.scss";
 import { useEffect, useContext } from "react";
 import { AuthContext } from '../../context/authContext/authContext';
 import { logout } from '../../context/authContext/apiCalls';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import HomeIcon from '@mui/icons-material/Home';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import TableRowsIcon from '@mui/icons-material/TableRows';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
 
 function Sidebar() {
 	const { isFetching, dispatch } = useContext(AuthContext);
@@ -11,7 +17,7 @@ function Sidebar() {
 		try {
 			e.preventDefault();
 			e.stopPropagation();
-			logout(null,dispatch)
+			logout(null, dispatch)
 		} catch (error) {
 			console.log(error);
 		}
@@ -19,98 +25,71 @@ function Sidebar() {
 	return (
 		<div className="sidebar">
 			<div className="sidebarWrapper">
-				<div className="sidebarMenu">
-					<h3 className="sidebarTitle">Dashboard</h3>
-					<ul className="sidebarList">
-						<Link to="/admin/" className="link">
-							<li className="sidebarListItem active">
-								Home
-							</li>
-						</Link>
-						<li className="sidebarListItem">
-							Analytics
-						</li>
-						<li className="sidebarListItem">
-							Sales
-						</li>
-						{user ? <Link to="/admin/login" className="link">
-							<li className="sidebarListItem active" onClick={Logout}>
-								Logout
-							</li>
-						</Link>:"" }
-						{user ? "":<Link to="/admin/login" className="link">
-							<li className="sidebarListItem active" >
-								Login
-							</li>
-						</Link>}
-					</ul>
+				<div className="infoAdmin">
+					<div className="infoTitle">
+						<img src={user.profilePic} alt={user.profilePic} width={40} height={40} />
+						<div className="nameTitle">
+							<p className="nameAdmin">{user.username}</p>
+							<p>Subtitle</p>
+						</div>
+					</div>
+					<div>
+						<MoreVertIcon />
+					</div>
 				</div>
 				<div className="sidebarMenu">
-					<h3 className="sidebarTitle">Quick Menu</h3>
-					<ul className="sidebarList">
+					<label className="sidebarTitle">Dashboard</label>
+					<div className="sidebarList">
+						<Link to="/admin/" className="link">
+							<p className="sidebarListItem active">
+								Home
+							</p>
+						</Link>
+						<p className="sidebarListItem">
+							Analytics(coming soon)
+						</p>
+						<p className="sidebarListItem">
+							Sales(coming soon)
+						</p>
+					</div>
+				</div>
+				<div className="sidebarMenu">
+					<label className="sidebarTitle">Quick Menu</label>
+					<div className="sidebarList">
 						<Link to="/admin/users" className="link">
-							<li className="sidebarListItem">
+							<p className="sidebarListItem">
 								Users
-							</li>
+							</p>
 						</Link>
 						<Link to="/admin/movies" className="link">
-							<li className="sidebarListItem">
+							<p className="sidebarListItem">
 								Movies
-							</li>
+							</p>
 						</Link>
 						<Link to="/admin/lists" className="link">
-							<li className="sidebarListItem">
+							<p className="sidebarListItem">
 								Lists
-							</li>
+							</p>
 						</Link>
 						<Link to="/admin/newMovie" className="link">
-							<li className="sidebarListItem">
+							<p className="sidebarListItem">
 								Add Movie
-							</li>
+							</p>
 						</Link>
 						<Link to="/admin/newList" className="link">
-							<li className="sidebarListItem">
+							<p className="sidebarListItem">
 								Add List
-							</li>
+							</p>
 						</Link>
-						<Link to="/admin/newUser" className="link">
-							<li className="sidebarListItem">
-								New User
-							</li>
-						</Link>
-					</ul>
-				</div>
-				<div className="sidebarMenu">
-					<h3 className="sidebarTitle">Notifications</h3>
-					<ul className="sidebarList">
-						<li className="sidebarListItem">
-							Mail
-						</li>
-						<li className="sidebarListItem">
-							Feedback
-						</li>
-						<li className="sidebarListItem">
-							Messages
-						</li>
-					</ul>
-				</div>
-				<div className="sidebarMenu">
-					<h3 className="sidebarTitle">Staff</h3>
-					<ul className="sidebarList">
-						<li className="sidebarListItem">
-							Manage
-						</li>
-						<li className="sidebarListItem">
-							Analytics
-						</li>
-						<li className="sidebarListItem">
-							Reports
-						</li>
-
-					</ul>
+					</div>
 
 				</div>
 			</div>
+			<Link to="/" className="link">
+				<p className="backButton">
+					<ExitToAppIcon /> Back
+				</p>
+			</Link>
 		</div>
 	);
 }

@@ -1,5 +1,64 @@
-.sidebar{
-    background-color: aquamarine;
+.sidebar {
+    background-color: rgb(25, 28, 36);
+    color: rgb(108, 103, 105);
+    padding: 10px;
     
+    .sidebarWrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
 
+        .infoAdmin {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            img {
+                border-radius: 50%;
+            }
+
+            .infoTitle {
+                display: flex;
+
+                .nameAdmin {
+                    font-size: 1.5rem;
+                    color: white;
+                }
+
+                .nameTitle {
+                    padding: 0 10px;
+                }
+            }
+        }
+
+        .sidebarMenu {
+            display: flex;
+            flex-direction: column;
+            .sidebarTitle{
+                color: white;
+                padding: 15px 0px;
+                font-size: 1.6rem;
+            }
+            .sidebarList{
+                padding: 10px 20px;
+                
+                .sidebarListItem{
+                    color: rgb(108, 103, 105);
+
+                    font-size: 1.1rem;
+                    font-weight: 300;
+                }:hover{
+                    color: white;
+                }
+            }
+
+
+        }
+
+    }
+    .backButton{
+        color: white;
+        margin-top: auto;
+
+    }
 }

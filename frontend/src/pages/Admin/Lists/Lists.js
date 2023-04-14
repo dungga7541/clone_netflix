@@ -12,14 +12,11 @@ const Lists = () => {
 	useEffect(() => {
 		getLists(dispatch);
 	}, [dispatch])
-	console.log(lists)
 	const handleDelete=(id)=>{
 		deleteList( id,dispatch );
 	}
 	return (
 		<div className='lists'>
-					<Sidebar/>
-
 			<div>
 				<table>
 					<tbody>
@@ -36,8 +33,8 @@ const Lists = () => {
 									<td>{list.genre}</td>
 									<td>{list.type}</td>
 									<td>
-									<Link to={{pathname:"/lists/find/"+ list._id,list:list}}><button>edit</button></Link>
-										<button onClick={()=>handleDelete(list._id)}>delete</button>
+									<Link to={{pathname:"/lists/find/"+ list._id,list:list}}><button className='btn btnEdit'>edit</button></Link>
+										<button onClick={()=>handleDelete(list._id)} className='btn btnDelete'>delete</button>
 									</td>
 								</tr>
 							)

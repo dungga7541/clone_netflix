@@ -21,14 +21,12 @@ const MovieList = () => {
 	}
 	return (
 		<div className='movieList'>
-					<Sidebar/>
-
 			<div>
 				<table>
 					<tbody>
 						<tr>
 							<th>title</th>
-							<th>desc</th>
+							<th className='desc'>desc</th>
 							<th>genre</th>
 							<th>Img</th>
 							<th>isSeries</th>
@@ -38,11 +36,11 @@ const MovieList = () => {
 							<th>Trailer</th>
 							<th>Action</th>
 						</tr>
-						{movies.map((movie, i) => {
+						{movies.slice(0, 4).map((movie, i) => {
 							return (
 								<tr key={i}>
 									<td>{movie.title}</td>
-									<td>{movie.desc}</td>
+									<td >{movie.desc}</td>
 									<td>{movie.genre}</td>
 									<td className='img'>
 										<img src={movie.img} alt={movie.img} width={50} height={50} />
@@ -67,8 +65,8 @@ const MovieList = () => {
 										</p>
 									</td>
 									<td>
-										<Link to={{ pathname: "/movie/" + movie._id, movie }}><button>edit</button></Link>
-										<button onClick={() => handleDelete(movie._id)}>delete</button>
+										<Link to={{ pathname: "/movie/" + movie._id, movie }}><button className='btn btnEdit'>edit</button></Link>
+										<button onClick={() => handleDelete(movie._id)} className='btn btnDelete'>delete</button>
 									</td>
 								</tr>
 							)

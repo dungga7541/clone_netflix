@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Login.scss";
 import { login } from '../../context/authContext/apiCalls';
 import { AuthContext } from './../../context/authContext/authContext';
+import logo from "../../assets/image/grunge-movies-label-png.png"
 
 const Login = () => {
 	const [email, setEmail] = useState("");
@@ -28,10 +29,10 @@ const Login = () => {
 							<Link to="/vn/">
 								<img
 									className="logo"
-									src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
+									src={logo}
 									alt=""
-									width={120}
-									height={50}
+									width={170}
+									height={90}
 								/></Link>
 						</div>
 					</div>
@@ -40,7 +41,7 @@ const Login = () => {
 							<h1>Đăng Nhập</h1>
 							<input
 								type="email"
-								placeholder="Email or phone number"
+								placeholder="Email"
 								className='inputField'
 								onChange={(event) => { setEmail(event.target.value) }}
 							/>
@@ -64,11 +65,8 @@ const Login = () => {
 							</div>
 							<div className='moreOptions'>
 								<span>
-									Bạn mới tham gia Netflix <b>Đăng kí ngay</b>.
+									Chưa có tài khoản ?<Link to="/vn/register"><b> Đăng kí ngay</b></Link>.
 								</span>
-								<small>
-									Trang này được Google reCAPTCHA bảo vệ để đảm bảo bạn không phải là robot. <b>Tìm hiểu thêm</b>.
-								</small>
 							</div>
 						</form>
 					</div>
