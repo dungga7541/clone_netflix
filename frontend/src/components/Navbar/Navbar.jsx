@@ -47,21 +47,27 @@ const Navbar = () => {
 					{/* <span>Homepage</span> */}
 
 					<Link to="/series" className="link">
-						<span className="navbarmainLinks">Series</span>
+						<span className="navbarmainLinks">Phim Series</span>
 					</Link>
 					<Link to="/movies" className="link">
-						<span className="navbarmainLinks">Movies</span>
+						<span className="navbarmainLinks">Phim</span>
 					</Link>
 					{/* <span>New and Popular</span>
 					<span>My List</span> */}
 				</div>
 				<div className="right">
 					<div className="searchBox" >
-						<input type='text' className='searchInput'/>
-						<SearchOutlinedIcon className="searchBtn"  />
-
+						<input type='text' className='searchInput' placeholder='Tìm kiếm...' />
+						<a>
+							<SearchOutlinedIcon className="searchBtn" />
+						</a>
 					</div>
-					<NotificationsIcon/>
+					<div class="dropdownNoti">
+						<NotificationsIcon />
+						<div class="notiContent">
+							<div className='notiItem'><img src={user.profilePic} width={50} height={50} alt={user.profilePic}/><p>Nhắc nhở nổi dung mới:(Comming soon)</p></div>
+						</div>
+					</div>
 					<img
 						src={user.profilePic}
 						alt=""

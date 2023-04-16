@@ -1,0 +1,85 @@
+.sidebar {
+    // background-color: rgb(25, 28, 36);
+    // color: rgb(108, 103, 105);
+    // padding: 10px;
+
+    // .sidebWrapper {
+    //     display: flex;
+    //     flex-direction: column;
+    //     flex: 1;
+    .menuBar {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        padding: 20px 15px;
+        justify-content: space-between;
+        gap: 20px;
+
+        .menuIcon {
+            font-size: 3rem;
+            padding: 5px;
+        }
+    }
+
+    .infoAdmin {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 15px;
+
+        img {
+            border-radius: 50%;
+            margin-right: 30px;
+            margin-left: 5px;
+        }
+
+        .infoTitle {
+            display: flex;
+
+            .nameAdmin {
+                font-size: 1.5rem;
+            }
+
+            .nameTitle {
+                padding: 0 10px;
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .menuContent {
+        width: 100%;
+
+        .menuOptions {
+            .menuIcon {
+                padding-top: 10px;
+            }
+        }
+    }
+
+    .backBtn {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        padding: 20px 15px;
+        justify-content: space-between;
+        gap: 20px;
+        height: 20px;
+        position: absolute;
+        bottom: 0;
+        list-style-type: none;
+        padding-bottom: 3rem;
+        .link{
+            display: flex;
+            align-items: center;
+            .exitIcon{
+                margin-left: 10px;
+                margin-right: 30px;
+            }
+            .backButton {
+                font-size: 1.4rem;
+            }
+        }
+
+    }
+}

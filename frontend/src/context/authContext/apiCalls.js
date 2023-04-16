@@ -3,10 +3,14 @@ import {
     loginFailure, loginStart,loginSuccess,logoutSuccess,
 } from "./authActions";
 
+const axiosInstance = axios.create
+({
+    baseURL:process.env.REACT_APP_API_URL,
+});
 export const login =async (user,dispatch)=>{
     dispatch(loginStart());
     try{
-        const res =await axios.post("http://localhost:8000/api/auth/login",user);
+        const res =await axiosInstance.post("auth/login",user);
         dispatch(loginSuccess(res.data));
     }catch(err){
         dispatch(loginFailure());

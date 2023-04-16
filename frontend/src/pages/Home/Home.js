@@ -10,11 +10,14 @@ import Footer from './../../components/Footer/Footer';
 const Home = ({ type,user }) => {
 	const [lists, setLists] = useState([]);
 	const [genre, setGenre] = useState(null);
-
+	const axiosInstance = axios.create
+	({
+		baseURL:process.env.REACT_APP_API_URL,
+	});
 	useEffect(() => {
 		const getRandomList = async () => {
 			try {
-				const res = await axios.get(`http://localhost:8000/api/lists${type ? "?type=" + type : ""} ${genre ? "&genre=" + genre : ""}`
+				const res = await axiosInstance.get(`lists${type ? "?type=" + type : ""} ${genre ? "&genre=" + genre : ""}`
 					, {
 						headers: {
 							token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,

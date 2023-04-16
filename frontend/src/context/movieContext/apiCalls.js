@@ -4,11 +4,14 @@ import {
     createMovieStart,createMovieSuccess,createMovieFailure
 } from "./movieActions"
 import axios from "axios";
-
+const axiosInstance = axios.create
+({
+    baseURL:process.env.REACT_APP_API_URL,
+});
 export const getMovies =async (dispatch)=>{
     dispatch(getMoviesStart());
     try{
-        const res =await axios.get("http://localhost:8000/api/movies",{
+        const res =await axiosInstance.get("movies",{
             headers:{
                 token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
             }, 
@@ -24,7 +27,7 @@ export const getMovies =async (dispatch)=>{
 export const deleteMovies =async (id,dispatch)=>{
     dispatch(deleteMoviesStart());
     try{
-        await axios.delete("http://localhost:8000/api/movies/"+id,{
+        await axiosInstance.delete("movies/"+id,{
             headers:{
                 token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
             }, 
@@ -40,7 +43,7 @@ export const deleteMovies =async (id,dispatch)=>{
 export const createMovie =async (movie,dispatch)=>{
     dispatch(createMovieStart());
     try{
-        const res =await axios.post("http://localhost:8000/api/movies/",movie,{
+        const res =await axiosInstance.post("movies/",movie,{
             headers:{
                 token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
             }, 

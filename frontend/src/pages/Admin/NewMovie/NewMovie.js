@@ -4,7 +4,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import storage from '../../../firebase-config';
 import { createMovie } from '../../../context/movieContext/apiCalls';
 import { MovieContext } from '../../../context/movieContext/movieContext';
-import Sidebar from '../../../components/SideBar/SideBar';
+import Sidebar from '../../../components/SideBar/SideBarmenu';
 
 
 

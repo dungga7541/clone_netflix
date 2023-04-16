@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from '../../../components/SideBar/SideBar';
+import Sidebar from '../../../components/SideBar/SideBarmenu';
 import "./Home.scss";
 import { useEffect, useContext } from "react";
 import { AuthContext } from './../../../context/authContext/authContext';

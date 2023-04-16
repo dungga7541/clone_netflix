@@ -13,7 +13,10 @@ const Register = () => {
 	const emailRef = useRef();
 	const passwordRef = useRef();
 	const usernameRef = useRef();
-  
+	const axiosInstance = axios.create
+	({
+		baseURL:process.env.REACT_APP_API_URL,
+	});
 	const handleFinish = async (e) => {
 		setEmail(emailRef.current.value);
 		setPassword(passwordRef.current.value);
@@ -21,7 +24,7 @@ const Register = () => {
 		try {
 			e.preventDefault();
 			e.stopPropagation();
-			await axios.post("http://localhost:8000/api/auth/register", { username,email,password });
+			await axiosInstance.post("auth/register", { username,email,password });
 			navigate("/vn/login")
 		} catch (error) {	
 			console.log(error);

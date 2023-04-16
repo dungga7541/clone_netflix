@@ -3,12 +3,15 @@ import {
     deleteUserStart,deleteUserSuccess,deleteUserFailure,
 } from "./userActions"
 import axios from "axios";
-
+const axiosInstance = axios.create
+({
+    baseURL:process.env.REACT_APP_API_URL,
+});
 //get all users
 export const getUsers =async (dispatch)=>{
     dispatch(getUsersStart());
     try{
-        const res =await axios.get("http://localhost:8000/api/users/",{
+        const res =await axiosInstance.get("users",{
             headers:{
                 token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
             }, 
@@ -24,7 +27,7 @@ export const getUsers =async (dispatch)=>{
 export const deleteUser =async (id,dispatch)=>{
     dispatch(deleteUserStart());
     try{
-        await axios.delete("http://localhost:8000/api/users/find/"+id,{
+        await axiosInstance.delete("users/find/"+id,{
             headers:{
                 token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
             }, 

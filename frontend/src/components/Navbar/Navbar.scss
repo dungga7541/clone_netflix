@@ -8,7 +8,8 @@
     background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.5) 50%);
     display: flex;
     align-items: center;
-    padding:0 1%;
+    padding: 0 1%;
+
     &.scrolled {
         background-color: rgb(20, 20, 20);
     }
@@ -38,31 +39,66 @@
         }
 
         .right {
-            gap: 1rem;
+            gap: 0.9rem;
 
             display: flex;
             align-items: center;
             position: relative;
 
             .searchBox {
+                height: 34px;
+                display: flex;
+                cursor: pointer;
+                padding: 4px;
+                border-radius: 30px;
+                align-items: center;
+
+                .searchBtn {
+                    margin-top: 5px;
+                }
+
+                input {
+                    width: 0;
+                    outline: 0;
+                    border: none;
+                    font-weight: 500;
+                    transition: 0.8s;
+                    background: transparent;
+                    margin-left: 5px;
+                }::placeholder{
+                    color: white;
+                }
+            }
+
+            :hover input {
+                width: 200px;
+            }
+
+            .searchBox:hover {
+                border: 2px solid white;
+            }
+
+            .dropdownNoti {
                 position: relative;
-                
-                .searchBtn{
+                display: inline-block;
+                .notiContent{
+                    display: none;
                     position: absolute;
-                    left: 80%;
-                    top:5%;
+                    min-width: 260px;
+                    background-color: rgba(15, 15, 15, 0.79);
+                    box-shadow: 2px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    z-index: 1;
+                    right: 4px;
+                    left: auto;
+
+                    .notiItem{
+                        padding: 10px;
+                        border-bottom: 1px solid white;
+                        display: flex;
+                    }
                 }
-                input[type="text"] {
-                    width: 150px;
-                    background-color: transparent;
-                    transition: width 1s ease-in-out;
-                    padding: 6px;
-                    border-radius: 8px;
-                    border: 1px solid white;
-                }
-                input[type="text"]:hover{
-                    width: 250px;
-                }
+            }:hover .notiContent{
+                display: block;
             }
 
             .imgUser {

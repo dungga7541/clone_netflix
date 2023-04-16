@@ -8,7 +8,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import YouTube, { YouTubeProps } from 'react-youtube';
 import { Player } from 'video-react';
-import Sidebar from '../../../components/SideBar/SideBar';
+import Sidebar from '../../../components/SideBar/SideBarmenu';
 
 
 const MovieList = () => {

@@ -4,7 +4,7 @@ import "./Lists.scss";
 import { ListContext } from '../../../context/listContext/listContext';
 import { getLists ,deleteList } from '../../../context/listContext/apiCalls';
 import { Link } from 'react-router-dom';
-import Sidebar from '../../../components/SideBar/SideBar';
+import Sidebar from '../../../components/SideBar/SideBarmenu';
 
 
 const Lists = () => {

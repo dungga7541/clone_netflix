@@ -5,7 +5,7 @@ import { MovieContext } from '../../../context/movieContext/movieContext';
 import { ListContext } from '../../../context/listContext/listContext';
 import { createList } from '../../../context/listContext/apiCalls';
 import { useNavigate } from 'react-router-dom';
-import Sidebar from '../../../components/SideBar/SideBar';
+import Sidebar from '../../../components/SideBar/SideBarmenu';
 const NewList = () => {
 	const [list, setList] = useState(null);
 	const { dispatch } = useContext(ListContext);

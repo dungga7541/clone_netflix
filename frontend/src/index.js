@@ -8,6 +8,8 @@ import { AuthContextProvider } from './context/authContext/authContext';
 import { MovieContextProvider } from './context/movieContext/movieContext';
 import { ListContextProvider } from './context/listContext/listContext';
 import { UserContextProvider } from './context/userContext/userContext';
+import { ProSidebarProvider } from 'react-pro-sidebar';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,10 +19,12 @@ root.render(
       <MovieContextProvider>
         <ListContextProvider>
           <UserContextProvider>
-            <BrowserRouter>
-              <App />
-              <ToastContainer />
-            </BrowserRouter>
+            <ProSidebarProvider>
+              <BrowserRouter>
+                <App />
+                <ToastContainer />
+              </BrowserRouter>
+            </ProSidebarProvider>
           </UserContextProvider>
         </ListContextProvider>
       </MovieContextProvider>

@@ -2,12 +2,14 @@ import React, { useRef, useState } from 'react';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
 import ListItem from '../ListItem/ListItem';
-import "./List.scss";
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';import "./List.scss";
 
-const List = ({ list }) => {	
+const List = ({ list }) => {
 	return (
 		<div className="list">
-			<h1 className="listTitle">{list.title}</h1>
+			<div className='listTitle'>
+				<h1 className="">{list.title}</h1>
+			</div>
 			<div className="wrapper">
 
 				<div className="container" >
