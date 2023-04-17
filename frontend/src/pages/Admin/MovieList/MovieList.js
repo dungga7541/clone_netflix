@@ -6,12 +6,9 @@ import { getMovies, deleteMovies } from '../../../context/movieContext/apiCalls'
 import { Link } from 'react-router-dom';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
-import YouTube, { YouTubeProps } from 'react-youtube';
-import { Player } from 'video-react';
-import Sidebar from '../../../components/SideBar/SideBarmenu';
-
 
 const MovieList = () => {
+
 	const { movies, dispatch } = useContext(MovieContext);
 	useEffect(() => {
 		getMovies(dispatch);
@@ -52,20 +49,20 @@ const MovieList = () => {
 									<td>{movie.year}</td>
 									<td className='movieYT'>
 										<p>
-										<video key={movie.video} width={50} height={50}>
-											<source src={movie.video} />
-										</video>
+											<video key={movie.video} width={50} height={50}>
+												<source src={movie.video} />
+											</video>
 										</p>
 									</td>
 									<td className='movieYT'>
 										<p>
-										<video key={movie.trailer} width={50} height={50}>
-								<source src={movie.trailer} />
-							</video>
+											<video key={movie.trailer} width={50} height={50}>
+												<source src={movie.trailer} />
+											</video>
 										</p>
 									</td>
 									<td>
-										<Link to={{ pathname: "/movie/" + movie._id, movie }}><button className='btn btnEdit'>edit</button></Link>
+										<Link to={{ pathname: "/admin/movie/" + movie._id, movie}}><button className='btn btnEdit'>edit</button></Link>
 										<button onClick={() => handleDelete(movie._id)} className='btn btnDelete'>delete</button>
 									</td>
 								</tr>

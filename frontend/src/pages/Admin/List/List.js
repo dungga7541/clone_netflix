@@ -8,11 +8,16 @@ import Sidebar from '../../../components/SideBar/SideBarmenu';
 const List = () => {
 	const params = useParams();
 	const [list, setList] = useState([]);
-	console.log(params.listId)
+	console.log(params.movieId)
+	console.log(list)
+	const axiosInstance = axios.create
+		({
+			baseURL: process.env.REACT_APP_API_URL,
+		});
 	useEffect(() => {
 		const getList = async (e) => {
 			try {
-				const res = await axios.get("http://localhost:8000/api/lists/find/" + params.listId, {
+				const res = await axiosInstance.get("/api/lists/find/" + params.listId, {
 					headers: {
 						token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
 					},

@@ -2,7 +2,7 @@ import React,{useState,useContext,useRef} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "./Register.scss";
 import axios from "axios"
-import logo from "../../assets/image/grunge-movies-label-png.png"
+import logo from "../../assets/image/grunge-movies-label-png.png";
 
 
 const Register = () => {

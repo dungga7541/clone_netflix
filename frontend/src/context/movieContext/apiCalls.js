@@ -54,6 +54,20 @@ export const createMovie =async (movie,dispatch)=>{
     }
 } 
 
+// export const getMovie =async (dispatch)=>{
+//     dispatch(getMovieStart());
+//     try{
+//         const res =await axiosInstance.get("movies",{
+//             headers:{
+//                 token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
+//             }, 
+//     });
+//     dispatch(getMovieSuccess(res.data));
+//     }catch(err){
+//         dispatch(getMovieFailure());
+//     }
+// } 
+
 // //UploadMovie
 
 // export const createMovie =async (movie,dispatch)=>{

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import imgUser from "../../assets/image/f53815f7-4cb8-48f8-b0c1-b9cdf0e34854.jpg";
 import { AuthContext } from '../../context/authContext/authContext';
 import { logout } from '../../context/authContext/apiCalls';
-import logo from "../../assets/image/grunge-movies-label-png.png"
+import logo from "../../assets/image/grunge-movies-label-png.png";
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
@@ -16,7 +16,7 @@ const Navbar = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const { isFetching, dispatch } = useContext(AuthContext);
 	const [open, setHandleOpen] = useState(false);
-
+	
 	const { user } = useContext(AuthContext);
 
 	window.onscroll = () => {

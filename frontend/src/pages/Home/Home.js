@@ -32,7 +32,7 @@ const Home = ({ type,user }) => {
 	}, [type, genre]);
 	return (
 		<div className="home">
-			<Navbar user={user}/>
+			<Navbar user={user} className="navBar"/>
 			<div className='content'>
 				<Featured type={type} setGenre={setGenre} />
 				{lists.map((list,i) => (

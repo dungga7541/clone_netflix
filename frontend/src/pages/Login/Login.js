@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Login.scss";
 import { login } from '../../context/authContext/apiCalls';
 import { AuthContext } from './../../context/authContext/authContext';
-import logo from "../../assets/image/grunge-movies-label-png.png"
+import logo from "../../assets/image/grunge-movies-label-png.png";
 
 const Login = () => {
 	const [email, setEmail] = useState("");

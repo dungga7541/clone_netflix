@@ -33,7 +33,7 @@ const Lists = () => {
 									<td>{list.genre}</td>
 									<td>{list.type}</td>
 									<td>
-									<Link to={{pathname:"/lists/find/"+ list._id,list:list}}><button className='btn btnEdit'>edit</button></Link>
+									<Link to={{pathname:"/admin/lists/find/"+ list._id,list:list}}><button className='btn btnEdit'>edit</button></Link>
 										<button onClick={()=>handleDelete(list._id)} className='btn btnDelete'>delete</button>
 									</td>
 								</tr>

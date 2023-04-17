@@ -55,24 +55,25 @@ const movieReducers = (state, action) => {
                 isFetching: false,
                 error: true,
             }
-        case "UPLOAD_MOVIES_START":
+        case "UPDATE_MOVIES_START":
             return {
                 ...state,
                 isFetching: true,
                 error: false,
             }
-        case "UPLOAD_MOVIES_SUCCESS":
+        case "UPDATE_MOVIES_SUCCESS":
             return {
-                movies: state.movies.map((movie) =>movie._id ===action.payload._id &&action.payload),
+                movies: state.movies.map((movie) => movie._id === action.payload._id && action.payload),
                 isFetching: false,
                 error: false,
             }
-        case "UPLOAD_MOVIES_FAILURE":
+        case "UPDATE_MOVIES_FAILURE":
             return {
                 ...state,
                 isFetching: false,
                 error: true,
             }
+
         default:
             return { ...state };
     }
