@@ -46,8 +46,8 @@ export default function ListItem({ index, item }) {
 				{isHovered && (
 					<div className="infoContent">
 						<div >
-							<video key={movie.trailer}  autoPlay={true}>
-								<source src={movie.trailer}  autoPlay={true}/>
+							<video key={movie.trailer}  autoPlay={true} >
+								<source src={movie.trailer}  autoPlay={true} height={325} width={280}/>
 							</video>
 							{/* <Player>
 								<video src={movie.trailer} autoPlay={true} loop width="220" />

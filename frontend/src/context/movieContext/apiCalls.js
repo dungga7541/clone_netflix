@@ -1,7 +1,8 @@
 import { 
     getMoviesStart,getMoviesFailure,getMoviesSuccess,
     deleteMoviesStart,deleteMoviesSuccess,deleteMoviesFailure,
-    createMovieStart,createMovieSuccess,createMovieFailure
+    createMovieStart,createMovieSuccess,createMovieFailure,
+    updateMovieStart,updateMovieSuccess,updateMovieFailure,
 } from "./movieActions"
 import axios from "axios";
 const axiosInstance = axios.create
@@ -54,32 +55,20 @@ export const createMovie =async (movie,dispatch)=>{
     }
 } 
 
-// export const getMovie =async (dispatch)=>{
-//     dispatch(getMovieStart());
-//     try{
-//         const res =await axiosInstance.get("movies",{
-//             headers:{
-//                 token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
-//             }, 
-//     });
-//     dispatch(getMovieSuccess(res.data));
-//     }catch(err){
-//         dispatch(getMovieFailure());
-//     }
-// } 
 
-// //UploadMovie
 
-// export const createMovie =async (movie,dispatch)=>{
-//     dispatch(createMovieStart());
-//     try{
-//         const res =await axios.posts("http://localhost:8000/api/movies/",movie,{
-//             headers:{
-//                 token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
-//             }, 
-//     });
-//         dispatch(createMovieSuccess(res.data));
-//     }catch(err){
-//         dispatch(createMovieFailure());
-//     }
-// } 
+//UpdateMovie
+
+export const updateMovie =async (movie,dispatch)=>{
+    dispatch(updateMovieStart());
+    try{
+        await axios.put("movies/"+movie._id,movie,{
+            headers:{
+                token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
+            }, 
+    });
+        dispatch(updateMovieSuccess(movie));
+    }catch(err){
+        dispatch(updateMovieFailure());
+    }
+} 

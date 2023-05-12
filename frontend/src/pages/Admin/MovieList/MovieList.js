@@ -62,7 +62,6 @@ const MovieList = () => {
 										</p>
 									</td>
 									<td>
-										<Link to={{ pathname: "/admin/movie/" + movie._id, movie}}><button className='btn btnEdit'>edit</button></Link>
 										<button onClick={() => handleDelete(movie._id)} className='btn btnDelete'>delete</button>
 									</td>
 								</tr>

@@ -1,6 +1,8 @@
 import { 
     getUsersStart,getUsersSuccess,getUsersFailure,
     deleteUserStart,deleteUserSuccess,deleteUserFailure,
+    updateUserStart,updateUserSuccess,updateUserFailure,
+    createUserStart,createUserSuccess,createUserFailure
 } from "./userActions"
 import axios from "axios";
 const axiosInstance = axios.create
@@ -38,18 +40,35 @@ export const deleteUser =async (id,dispatch)=>{
     }
 } 
 
-//Upload
+// UpdateUser
 
-// export const createMovie =async (movie,dispatch)=>{
-//     dispatch(createMovieStart());
-//     try{
-//         const res =await axios.posts("http://localhost:8000/api/movies/",movie,{
-//             headers:{
-//                 token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
-//             }, 
-//     });
-//         dispatch(createMovieSuccess(res.data));
-//     }catch(err){
-//         dispatch(createMovieFailure());
-//     }
-// } 
+export const updateUser =async (user,dispatch)=>{
+
+    dispatch(updateUserStart());
+    try{
+        await axiosInstance.put("users/"+ user._id,user,{
+            headers:{
+                token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
+            }, 
+            
+    });
+        dispatch(updateUserSuccess(user._id));
+    }catch(err){
+        dispatch(updateUserFailure());
+    }
+} 
+export const createUser =async (user,dispatch)=>{
+
+    dispatch(createUserStart());
+    try{
+        await axiosInstance.put("auth/register",user,{
+            headers:{
+                token:"Bearer " +JSON.parse(localStorage.getItem("user")).accessToken,
+            }, 
+            
+    });
+        dispatch(createUserSuccess());
+    }catch(err){
+        dispatch(createUserFailure());
+    }
+} 

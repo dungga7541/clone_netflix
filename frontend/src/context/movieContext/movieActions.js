@@ -31,9 +31,9 @@ export const createMovieFailure =() =>({
 export const updateMovieStart =() =>({
     type:"UPDATE_MOVIES_START"
 })
-export const updateMovieSuccess =(movies) =>({
+export const updateMovieSuccess =(movie) =>({
     type:"UPDATE_MOVIES_SUCCESS",
-    payload:movies,
+    payload:movie,
 })
 export const updateMovieFailure =() =>({
     type:"UPDATE_MOVIES_FAILURE"

@@ -9,26 +9,30 @@ import { MovieContextProvider } from './context/movieContext/movieContext';
 import { ListContextProvider } from './context/listContext/listContext';
 import { UserContextProvider } from './context/userContext/userContext';
 import { ProSidebarProvider } from 'react-pro-sidebar';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
   <React.StrictMode>
-    <AuthContextProvider>
-      <MovieContextProvider>
-        <ListContextProvider>
-          <UserContextProvider>
-            <ProSidebarProvider>
-              <BrowserRouter>
-                <App />
-                <ToastContainer />
-              </BrowserRouter>
-            </ProSidebarProvider>
-          </UserContextProvider>
-        </ListContextProvider>
-      </MovieContextProvider>
-    </AuthContextProvider>
+    <Provider store={store}>
+      <AuthContextProvider>
+        <MovieContextProvider>
+          <ListContextProvider>
+            <UserContextProvider>
+              <ProSidebarProvider>
+                <BrowserRouter>
+                  <App />
+                  <ToastContainer />
+                </BrowserRouter>
+              </ProSidebarProvider>
+            </UserContextProvider>
+          </ListContextProvider>
+        </MovieContextProvider>
+      </AuthContextProvider>
+    </Provider>
+
   </React.StrictMode>
 
 );

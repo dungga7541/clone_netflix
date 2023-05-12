@@ -73,7 +73,24 @@ const movieReducers = (state, action) => {
                 isFetching: false,
                 error: true,
             }
-
+        // case "GET_MOVIE_START":
+        //     return {
+        //         ...state,
+        //         isFetching: true,
+        //         error: false,
+        //     }
+        // case "GET_MOVIE_SUCCESS":
+        //     return {
+        //         movies: action.payload,
+        //         isFetching: false,
+        //         error: false,
+        //     }
+        // case "GET_MOVIE_FAILURE":
+        //     return {
+        //         ...state,
+        //         isFetching: false,
+        //         error: true,
+        //     }
         default:
             return { ...state };
     }

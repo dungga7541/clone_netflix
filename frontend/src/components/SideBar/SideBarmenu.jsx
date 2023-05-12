@@ -32,9 +32,8 @@ function Sidebarmenu() {
 				<div className="menuBar">
 					<MenuIcon className="menuIcon" onClick={() => collapseSidebar()} />
 					<Link to="/admin/" className="link">
-						<img src={logo} width={150} height={50} alt={logo}/>
+						<img src="https://www.psdstamps.com/wp-content/uploads/2019/12/grunge-movies-label-png-768x512.png" width={150} height={50} alt={logo}/>
 					</Link>
-
 				</div>
 
 				<div className="infoAdmin">

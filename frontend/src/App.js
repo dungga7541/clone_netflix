@@ -10,6 +10,8 @@ import { AuthContext } from "./context/authContext/authContext";
 import { useEffect } from "react";
 import HomeAdmin from "./pages/Admin/Home/Home";
 import Register from "./pages/Register/Register";
+import Search from "./pages/Search/Search";
+
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -27,34 +29,30 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" exact element={user ? <Home /> : <Navigate to="/vn" replace />} />
-        <Route path="/vn" element={<LandingPage/>}/>
-        <Route path="/vn/register" element={<Register /> } />
+        <Route path="/vn" element={<LandingPage />} />
+        <Route path="/vn/register" element={<Register />} />
         <Route path="/vn/login" element={!user ? <Login /> : <Navigate to="/" replace />} />
+        <Route path="/*" exact element={user ? <Home /> : <Navigate to="/vn" replace />} />
 
         {user && (
           <>
+          <Route path="/watch/" element={<Watch />} />
 
-            <Route path="/movies" element={<Home type="movies" />} />
-            <Route path="/series" element={<Home type="series" />} />
-            <Route path="/watch/" element={<Watch />} />
-            {user.isAdmin ? 
-
+            {user.isAdmin ?
               (
-
-              <>
-                <Route exact path="/admin//*" element={<HomeAdmin users={user}/>} />
-                {/* <Route path="/admin/users" element={<UserList />} />
-                <Route path="/admin/user/:userId" element={<User />} />
-                <Route path="/admin/newUser" element={<NewUser />} />
-                <Route path="/admin/movies" element={<MovieList />} />
-                <Route path="/admin/movie/:movieId" element={<Movie />} />
-                <Route path="/admin/newMovie" element={<NewMovie />} />
-                <Route path="/admin/lists" element={<Lists />} />
-                <Route path="/admin/lists/find/:listId" element={<List />} />
-                <Route path="/admin/newlist" element={<NewList />} /> */}
-              </>
-              ) : navigate("/")}
+                <>
+                  <Route exact path="/admin//*" element={<HomeAdmin users={user} />} />
+                  {/* <Route path="/admin/users" element={<UserList />} />
+                  <Route path="/admin/user/:userId" element={<User />} />
+                  <Route path="/admin/newUser" element={<NewUser />} />
+                  <Route path="/admin/movies" element={<MovieList />} />
+                  <Route path="/admin/movie/:movieId" element={<Movie />} />
+                  <Route path="/admin/newMovie" element={<NewMovie />} />
+                  <Route path="/admin/lists" element={<Lists />} />
+                  <Route path="/admin/lists/find/:listId" element={<List />} />
+                  <Route path="/admin/newlist" element={<NewList />} /> */}
+                </>
+              ) : <Navigate to="/" replace />}
           </>
         )}
       </Routes>

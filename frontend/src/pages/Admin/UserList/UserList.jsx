@@ -5,6 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import imgUser from "../../../assets/image/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg";
 import { UserContext } from '../../../context/userContext/userContext';
 import { deleteUser, getUsers } from './../../../context/userContext/apiCalls';
+import { Link } from 'react-router-dom';
 
 const UserList = () => {
 	const { users, dispatch } = useContext(UserContext);
@@ -37,7 +38,7 @@ const UserList = () => {
 									<td>{user.isAdmin ? <CheckIcon style={{color:'green'}}/> : <CloseIcon style={{color:'red'}}/>}</td>
 									<td><img src={(user.profilePic) !== "" ? (user.profilePic):(imgUser)} alt={user.profilePic}/></td>
 									<td>
-										<button className='btn btnEdit'>Edit</button>
+										<Link to={{ pathname: "/admin/users/" + user._id, user}}><button className='btn btnEdit'>Edit</button></Link>
 										<button className='btn btnDelete' onClick={()=>handleDelete(user._id)}>Delete</button>
 									</td>
 								</tr>

@@ -15,6 +15,8 @@ const List = ({ list }) => {
 				<div className="container" >
 					{list.content.slice(0, 8).map((item, i) => (
 						<ListItem key={i} index={i} item={item} />
+
+
 					))}
 				</div>
 			</div>

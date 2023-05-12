@@ -36,24 +36,42 @@ const userReducers = (state, action) => {
                 isFetching: false,
                 error: true,
             }
-        // case "CREATE_USER_START":
-        //     return {
-        //         ...state,
-        //         isFetching: true,
-        //         error: false,
-        //     }
-        // case "CREATE_USER_SUCCESS":
-        //     return {
-        //         movies: [...state.movies, action.payload],
-        //         isFetching: false,
-        //         error: false,
-        //     }
-        // case "CREATE_USER_FAILURE":
-        //     return {
-        //         ...state,
-        //         isFetching: false,
-        //         error: true,
-        //     }
+        case "UPDATE_USER_START":
+            return {
+                ...state,
+                isFetching: true,
+                error: false,
+            }
+        case "UPDATE_USER_SUCCESS":
+            return {
+                users: state.users.map((user) => user._id === action.payload._id && action.payload),
+                isFetching: false,
+                error: false,
+            }
+        case "UPDATE_USER_FAILURE":
+            return {
+                ...state,
+                isFetching: false,
+                error: true,
+            }
+        case "CREATE_USER_START":
+            return {
+                ...state,
+                isFetching: true,
+                error: false,
+            }
+        case "CREATE_USER_SUCCESS":
+            return {
+                users: [...state.users, action.payload],
+                isFetching: false,
+                error: false,
+            }
+        case "CREATE_USER_FAILURE":
+            return {
+                ...state,
+                isFetching: false,
+                error: true,
+            }
         // case "UPLOAD_USER_START":
         //     return {
         //         ...state,

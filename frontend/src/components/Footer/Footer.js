@@ -3,60 +3,55 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import "./Footer.scss";
 
 const Footer = () => {
 	return (
 		<div className='footer'>
 			<div className='topFooter'>
-				<div className='socialNetwork'>
+				<div className='leftFooter'>
 					<div className='title'>
-						<h2>Mạng xã hội</h2>
+						<h3>Điều khoản của chúng tôi</h3>
+						<h3>Chính sách bảo mật</h3>
+						<h3>Câu hỏi thường gặp</h3>
+						<h3>Danh sách theo dõi</h3>
 					</div>
 					<div className='icon'>
-						<span>
-							<FacebookIcon />
-						</span>
-						<span>
-							<InstagramIcon />
-						</span>
-						<span>
-							<TwitterIcon />
-						</span>
-						<span>
-							<YouTubeIcon />
-						</span>
+						<p>
+							© 2999 Cocomovie. Tất cả các video và chương trình trên nền tảng này là thương hiệu của, và tất cả các hình ảnh và nội dung liên quan là tài sản của Cocomovie Inc. Việc sao chép và sao chép nội dung này đều bị nghiêm cấm.
+						</p>
 					</div>
 				</div>
 				<div className='centerFooter'>
-					<div className='columns'>
-						<p>Mô tả âm thanh</p>
-						<p>Quan hệ với nhà đầu tư</p>
-						<p>Thông báo pháp lý</p>
+					<div className='buttonService'>
+						<h2>Theo dõi chúng tôi trên :</h2>
 					</div>
-					<div className='columns'>
-						<p>Trung tâm trợ giúp</p>
-						<p>Việc làm</p>
-						<p>Tùy chọn cookie</p>
-					</div>
-					<div className='columns'>
-						<p>Thẻ quà tặng</p>
-						<p>Điều khoản sử dụng</p>
-						<p>Thông tin doanh nghiệp</p>
-					</div>
-					<div className='columns'>
-						<p>Trung tâm đa phương tiện</p>
-						<p>Quyền riêng tư</p>
-						<p>Liên hệ với chúng tôi</p>
+					<div className='icon'>
+						<span><FacebookIcon /></span>
+						<span><TwitterIcon /></span>
+						<span><LinkedInIcon /></span>
+						<span><YouTubeIcon /></span>
+						<span><InstagramIcon /></span>
+						<span><GitHubIcon /></span>
 					</div>
 				</div>
-				<div className='bottomFooter'>
-					<div className='buttonService'>
-						<p>Mã dịch vụ</p>
+				<div className='rightFooter'>
+					<div >
+						<h2>Chúng tôi có trên :</h2>
+						<div className='getUs'>
+							<img src="https://templates.iqonic.design/streamit/frontend/html/images/footer/01.jpg" alt="logo_chplay" height={40} width={120} />
+							<img src="https://templates.iqonic.design/streamit/frontend/html/images/footer/02.jpg" alt="logo_apple" height={40} width={120} />
+
+						</div>
 					</div>
-					<div className=''>
-						<p>CopyRight from ... Inc</p>
-					</div>
+				</div>
+			</div>
+
+			<div className='bottomFooter'>
+				<div className='copyRight'>
+					<p>CopyRight @ Cocomovie Inc all reserved</p>
 				</div>
 			</div>
 		</div>

@@ -29,7 +29,7 @@ const Login = () => {
 							<Link to="/vn/">
 								<img
 									className="logo"
-									src={logo}
+									src="https://www.psdstamps.com/wp-content/uploads/2019/12/grunge-movies-label-png-768x512.png"
 									alt=""
 									width={170}
 									height={90}
