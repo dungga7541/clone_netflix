@@ -6,6 +6,7 @@ import { getMovies, deleteMovies } from '../../../context/movieContext/apiCalls'
 import { Link } from 'react-router-dom';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
+import { Button } from '@mui/material';
 
 const MovieList = () => {
 
@@ -18,36 +19,42 @@ const MovieList = () => {
 	}
 	return (
 		<div className='movieList'>
-			<div>
+			<div className='table-movieList-container'>
 				<table>
+					<caption>List Movie</caption>
 					<tbody>
 						<tr>
-							<th>title</th>
-							<th className='desc'>desc</th>
-							<th>genre</th>
+							<th>Title</th>
+							<th>Desc</th>
+							<th>Genre</th>
 							<th>Img</th>
 							<th>isSeries</th>
-							<th>imgSm</th>
-							<th>year</th>
-							<th>Video</th>
-							<th>Trailer</th>
+							<th>ImgSm</th>
+							<th>Year</th>
+							{/* <th>Video</th>
+							<th>Trailer</th> */}
 							<th>Action</th>
 						</tr>
-						{movies.slice(0, 4).map((movie, i) => {
+						{movies.map((movie, i) => {
 							return (
 								<tr key={i}>
-									<td>{movie.title}</td>
-									<td >{movie.desc}</td>
-									<td>{movie.genre}</td>
-									<td className='img'>
+									<td data-cell="Title">{movie.title}</td>
+									<td data-cell="Desc" className='desc'>{movie.desc}</td>
+									<td data-cell="Genre">{movie.genre}</td>
+									<td data-cell="Img" className='img'>
 										<img src={movie.img} alt={movie.img} width={50} height={50} />
 									</td>
-									<td>{movie.isSeries ? <CheckIcon style={{ color: 'green' }} /> : <CloseIcon style={{ color: 'red' }} />}</td>
-									<td>
+									<td data-cell="isSeries" className='isSeries'>
+										{movie.isSeries ?
+											<CheckIcon style={{ color: 'green' }} /> :
+											<CloseIcon style={{ color: 'red' }} />
+										}
+									</td>
+									<td data-cell="ImgSm" className='img'>
 										<img src={movie.imgSm} alt={movie.imgSm} width={50} height={50} />
 									</td>
-									<td>{movie.year}</td>
-									<td className='movieYT'>
+									<td data-cell="Year">{movie.year}</td>
+									{/* <td className='movieYT'>
 										<p>
 											<video key={movie.video} width={50} height={50}>
 												<source src={movie.video} />
@@ -60,9 +67,16 @@ const MovieList = () => {
 												<source src={movie.trailer} />
 											</video>
 										</p>
-									</td>
-									<td>
-										<button onClick={() => handleDelete(movie._id)} className='btn btnDelete'>delete</button>
+									</td> */}
+									<td data-cell="Action">
+										<Button
+											onClick={() => handleDelete(movie._id)}
+											className='btnDelete'
+											variant='contained'
+											color='error'
+										>
+											Xóa
+										</Button>
 									</td>
 								</tr>
 							)
@@ -70,9 +84,7 @@ const MovieList = () => {
 						)}
 					</tbody>
 				</table>
-				<p></p>
 			</div>
-
 		</div>
 	);
 };

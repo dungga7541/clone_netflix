@@ -9,7 +9,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from 'react-pro-sidebar';
 import MenuIcon from '@mui/icons-material/Menu';
-import logo from "../../assets/image/grunge-movies-label-png.png";
+import logo from "../../assets/image/logo.png";
 import BarChartIcon from '@mui/icons-material/BarChart';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 function Sidebarmenu() {

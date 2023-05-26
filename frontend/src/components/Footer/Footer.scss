@@ -1,10 +1,9 @@
 .footer {
   color: white;
-
   background-color: rgb(20, 20, 20);
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   flex-wrap: wrap;
 
@@ -13,7 +12,7 @@
     background-color: rgb(12, 12, 12);
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     .leftFooter {
@@ -23,8 +22,9 @@
       .title {
         display: flex;
         padding: 20px 0;
+        
         h3 {
-          padding: 0 20px;
+          margin-right: 5px;
         }
       }
       .icon {
@@ -36,8 +36,6 @@
       display: flex;
       flex-direction: column;
       flex: 0.2;
-      .columns {
-      }
       .icon {
         display: flex;
         padding: 20px 0;
@@ -62,6 +60,8 @@
       flex-direction: column;
       .getUs {
         padding: 20px 0;
+        display: flex;
+        flex-wrap: nowrap;
         img {
           padding-right: 15px;
         }
@@ -72,13 +72,99 @@
     }
   }
 
-  .bottomFooter{
+  .bottomFooter {
     background-color: black;
     display: flex;
     justify-content: center;
     text-align: center;
-    .copyRight{
-        padding: 10px 0;
+    .copyRight {
+      padding: 10px 0;
+    }
+  }
+}
+.ipadFooter {
+  display: none;
+}
+/*  Mobie: width <740px */
+@media only screen and (max-width: 46.1875em) {
+  .topFooter {
+    flex-direction: column;
+    .leftFooter {
+      .title {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0;
+        h3 {
+          text-align: center;
+          padding: 10px 20px;
+          font-size: 1.5rem;
+        }
+      }
+      .icon {
+        display: none;
+      }
+    }
+    .rightFooter {
+      text-align: center;
+    }
+  }
+}
+
+/* Tablet: width >=740px  and width <1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 64em) {
+  .footer {
+    .title{
+      justify-content: space-between;
+    }
+    .topFooter {
+      display: none;
+    }
+    .ipadFooter {
+      display: block;
+      display: flex;
+      .leftFooter {
+        display: flex;
+        flex-direction: column;
+        flex: 0.65;
+        .title {
+          display: flex;
+          padding: 20px;
+          h3 {
+          }
+        }
+        .icon {
+          padding: 20px;
+        }
+      }
+      .rightFooter {
+        flex: 0.35;
+  
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        .followUs{
+          padding: 20px 0;
+        }
+        .getUs {
+          img {
+            padding-right: 15px;
+          }
+        }
+        .buttonService {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+/* PC :width >= 1024px */
+@media only screen and (min-width: 64em) {
+  .title {
+    h3 {
+      padding: 0 20px;
     }
   }
 }

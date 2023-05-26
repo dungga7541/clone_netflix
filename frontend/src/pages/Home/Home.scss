@@ -3,6 +3,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    padding: 0 1%;
     .navBar{
         display: flex;
     }
@@ -10,5 +11,13 @@
         padding: 10px 0;
         height: 100%;
         
+    }
+    
+}
+/*  Mobie: width <740px */
+@media only screen and (max-width: 46.1875em) {
+    .home{
+        .navBar{
+        }
     }
 }

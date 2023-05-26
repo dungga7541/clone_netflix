@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Login.scss";
 import { login } from '../../context/authContext/apiCalls';
 import { AuthContext } from './../../context/authContext/authContext';
-import logo from "../../assets/image/grunge-movies-label-png.png";
+import logo from "../../assets/image/logo.png";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
@@ -54,6 +54,7 @@ const Login = () => {
 							<button className="loginButton" onClick={signIn}>
 								Đăng nhập
 							</button>
+							<p style={{color:"red"}}> TK: admin , MK: admin</p>
 							<div className='rememberMe'>
 								<div className='remember'>
 									<input type='checkbox'/>

@@ -6,6 +6,7 @@ import imgUser from "../../../assets/image/360_F_516275801_f3Fsp17x6HQK0xQgDQEEL
 import { UserContext } from '../../../context/userContext/userContext';
 import { deleteUser, getUsers } from './../../../context/userContext/apiCalls';
 import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 const UserList = () => {
 	const { users, dispatch } = useContext(UserContext);
@@ -17,9 +18,9 @@ const UserList = () => {
 	}
 	return (
 		<div className='userList'>
-
-			<div>
+			<div className='table-userList-container'>
 				<table>
+					<caption>List User</caption>
 					<tbody>
 						<tr>
 							<th>STT</th>
@@ -29,27 +30,51 @@ const UserList = () => {
 							<th>Img</th>
 							<th>Action</th>
 						</tr>
-						{users.map((user,i) => {
+						{users.map((user, i) => {
 							return (
 								<tr key={user._id}>
-									<td>{i}</td>
-									<td>{user.username}</td>
-									<td>{user.email}</td>
-									<td>{user.isAdmin ? <CheckIcon style={{color:'green'}}/> : <CloseIcon style={{color:'red'}}/>}</td>
-									<td><img src={(user.profilePic) !== "" ? (user.profilePic):(imgUser)} alt={user.profilePic}/></td>
-									<td>
-										<Link to={{ pathname: "/admin/users/" + user._id, user}}><button className='btn btnEdit'>Edit</button></Link>
-										<button className='btn btnDelete' onClick={()=>handleDelete(user._id)}>Delete</button>
+									<td data-cell="STT">{i}</td>
+									<td data-cell="UserName" className='username'>{user.username}</td>
+									<td data-cell="Email" className='email'>{user.email}</td>
+									<td data-cell="Admin" className='isAdmin'>
+										{user.isAdmin ?
+											<CheckIcon style={{ color: 'green' }} /> :
+											<CloseIcon style={{ color: 'red' }} />
+										}
+									</td>
+									<td data-cell="Img" className='imgUser'>
+										<img
+											src={(user.profilePic) !== "" ?
+												(user.profilePic) :
+												(imgUser)}
+											alt={user.profilePic}
+										/>
+									</td>
+									<td data-cell="Action" className='action'>
+										<Link to={{ pathname: "/admin/users/" + user._id, user }}>
+											<Button
+												className='btnAction'
+												variant='contained'
+												color='primary'
+											>
+												Sửa
+											</Button>
+										</Link>
+										<Button
+											className='btnAction'
+											onClick={() => handleDelete(user._id)}
+											variant='contained'
+											color='error'
+										>
+											Xóa
+										</Button>
 									</td>
 								</tr>
 							)
-						}
-						)}
+						})}
 					</tbody>
 				</table>
-				<p></p>
 			</div>
-
 		</div>
 	);
 };

@@ -5,6 +5,10 @@ export const loginSuccess =(user)=>({
     type:"LOGIN_SUCCESS",
     payload: user,
 });
+export const updateAuthSuccess =(user)=>({
+    type:"UPDATE_AUTH_SUCCESS",
+    payload: user,
+});
 export const loginFailure =()=>({
     type:"LOGIN_FAILURE"
 });

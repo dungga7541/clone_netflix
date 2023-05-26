@@ -1,0 +1,14 @@
+.inputField {
+    padding: 10px;
+    h2 {
+      padding: 10px 0;
+    }
+    input {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      color: black;
+    }::placeholder{
+      color: gray;
+    }
+  }

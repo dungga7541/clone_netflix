@@ -1,8 +1,7 @@
-import React,{useState,useContext,useRef} from 'react';
+import React,{useState,useRef} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "./Register.scss";
 import axios from "axios"
-import logo from "../../assets/image/grunge-movies-label-png.png";
 
 
 const Register = () => {
@@ -16,7 +15,9 @@ const Register = () => {
 	const axiosInstance = axios.create
 	({
 		baseURL:process.env.REACT_APP_API_URL,
-	});
+		
+	}); 
+
 	const handleFinish = async (e) => {
 		setEmail(emailRef.current.value);
 		setPassword(passwordRef.current.value);
@@ -47,7 +48,7 @@ const Register = () => {
 								/></Link>
 						</div>
 					</div>
-					<div className='formLogin'>
+					<div className='formRegis'>
 						<form >
 							<h1>Đăng Kí</h1>
 							<input

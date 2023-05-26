@@ -12,6 +12,15 @@ const authReducers = (state, action) => {
                 isFetching: true,
                 error: false,
             }
+        case "UPDATE_AUTH_SUCCESS":
+            return {
+                user: {
+                    ...state.user,
+                    ...action.payload,
+                },
+                isFetching: true,
+                error: false,
+            }
         case "LOGIN_FAILURE":
             return {
                 user: null,

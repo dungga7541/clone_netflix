@@ -7,7 +7,6 @@ export const searchSlice =createSlice({
     },
     reducers:{
         updateSearch:(state,action) =>{
-            console.log("test",action.payload)
             state.searchInfo = action.payload;
         }
     }

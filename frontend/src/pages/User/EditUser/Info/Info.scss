@@ -1,0 +1,91 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  .infoUser {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .rowInfo {
+      display: flex;
+      flex-direction: column;
+      flex: 0.5;
+    }
+    .inputField {
+      padding: 10px;
+      h2 {
+        padding: 10px 0;
+      }
+      input {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        color: black;
+      }::placeholder{
+        color: gray;
+      }
+    }
+
+  }
+  .btnEdit{
+    padding: 20px 40px;
+    button{
+        margin: 0 10px;
+        padding: 10px;
+        background-color: gray;
+        border: 2px solid white;
+        border-radius: 25px;
+        background-color: rgb(1, 128, 254);
+    }
+  }
+}
+/*  Mobie: width <740px */
+@media only screen and (max-width: 46.1875em) {
+  .info {
+    .infoUser {
+      width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .inputField {
+      input {
+      }
+    }
+    }
+    .btnEdit{
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+/* Tablet: width >=740px  and width <1024px */
+@media only screen and (min-width: 46.25em) and (max-width:64em){
+  .info {
+    .infoUser {
+      width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .inputField {
+      input {
+      }
+    }
+    }
+    .btnEdit{
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+/* PC :width >= 1024px */
+@media only screen and (min-width: 64em) {
+
+}
+
+

@@ -8,7 +8,7 @@
         
         width: 100%;
         height: 100vh;
-        background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/2e884ce2-da1c-4501-ab9a-10c534d30975/e2a8204b-4c6a-436e-80b8-4e81e3fcc065/VN-en-20230327-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+        background-image: url("https://images.pexels.com/photos/342003/pexels-photo-342003.jpeg");
         background-position: center;
         background-repeat: none;
         background-size: cover;
@@ -104,6 +104,34 @@
                     }
                 }
             }
+        }
+    }
+}
+
+/*  Mobie: width <740px */
+@media only screen and (max-width: 46.1875em) {
+    .login{
+        .formLogin{
+            width: 70% !important;
+        }
+    }
+
+}
+
+/* Tablet: width >=740px  and width <1024px */
+@media only screen and (min-width: 46.25em) and (max-width:64em){
+    .login{
+        .formLogin{
+            width: 50% !important;
+        }
+    }
+}
+
+/* PC :width >= 1024px */
+@media only screen and (min-width: 64em) and (max-width:74em){
+    .login{
+        .formLogin{
+            width: 40% !important;
         }
     }
 }

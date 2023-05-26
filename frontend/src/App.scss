@@ -1,12 +1,42 @@
-*{
-    margin: 0;
-    padding: 0;
-    color: inherit;
-    text-decoration: none;
-    box-sizing: border-box;
-
+* {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
-.App{
-    display: grid;
+.app {
+  width: 100%;
+  display: block;
+}
+/*  Mobie: width <740px */
+@media only screen and (max-width: 46.1875em) {
+  .app {
+  }
+}
+
+/* Tablet: width >=740px  and width <1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 64em) {
+  .app {
+    max-width: 63em;
+  }
+}
+
+/* PC :width >= 1024px */
+@media only screen and (min-width: 64em) {
+}
+:root {
+  --bg-dark-color: rgb(20,20,20);
+  --bg-light-color: white;
+  --text-light-color: black;
+  --text-dark-color: white;
+}
+body.light {
+  --background-color: var(--bg-light-color);
+  --text-color: var(--text-light-color);
+}
+body.dark {
+  --background-color: var(--bg-dark-color);
+  --text-color: var(--text-dark-color);
 }

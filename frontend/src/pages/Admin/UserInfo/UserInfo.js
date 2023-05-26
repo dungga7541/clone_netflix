@@ -80,7 +80,6 @@ const UserInfo = () => {
 	}
 	return (
 		<div className='userInfo'>
-			CommingSoon
 			<form>
 				<div className='aaa'>
 					<div>
@@ -88,7 +87,7 @@ const UserInfo = () => {
 						<input type='text' name="email" value={user.email} onChange={handleChange} />
 						<h1>Username</h1>
 						<input type='text' name="username" value={user.username} onChange={handleChange} />
-						<h1>image(CommingSoon)</h1>
+						<h1>image</h1>
 						<img src={user.profilePic} name="profilePic" alt={user.profilePic} height={20} width={20} />
 						<input type='file' id='img' name="profilePic" defaultValue={user.profilePic} onChange={e => setProfilePic(e.target.files[0])} />
 					</div>

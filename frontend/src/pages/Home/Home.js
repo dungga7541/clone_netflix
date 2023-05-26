@@ -3,8 +3,8 @@ import Navbar from './../../components/Navbar/Navbar';
 import Footer from './../../components/Footer/Footer';
 import { Routes, Route } from 'react-router-dom';
 import HomeFeature from '../HomeFeature/HomeFeature';
-import Search from './../Search/Search';
-import EditUser from './../User/EditUser/EditUser';
+import Search from '../User/Search/Search';
+import EditUser from '../User/EditUser/EditUser';
 
 
 
@@ -17,7 +17,7 @@ const Home = ({ user }) => {
 				<Route path="/movies" element={<HomeFeature type="movies" />} />
 				<Route path="/series" element={<HomeFeature type="series" />} />
 				<Route path="/search" element={<Search />} />
-				<Route path="/editProfile" element={<EditUser/>} />
+				<Route path="/editProfile/:userId/*" element={<EditUser/>} />
 			</Routes>
 			<Footer />
 		</div>

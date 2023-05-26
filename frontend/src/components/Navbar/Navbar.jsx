@@ -8,13 +8,18 @@ import { Link, useNavigate } from "react-router-dom";
 import imgUser from "../../assets/image/f53815f7-4cb8-48f8-b0c1-b9cdf0e34854.jpg";
 import { AuthContext } from '../../context/authContext/authContext';
 import { logout } from '../../context/authContext/apiCalls';
-import logo from "../../assets/image/grunge-movies-label-png.png";
+import logo from "../../assets/image/logo.png";
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux';
 import { updateSearch } from './../../redux/reducers/searchSlice';
 import ClearIcon from '@mui/icons-material/Clear';
+import SideBar from "../../components/SideBar/SideBarmenu";
+import Darkmode from '../Darkmode/Darkmode';
+
+
+
 const Navbar = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const { isFetching, dispatch } = useContext(AuthContext);
@@ -26,6 +31,7 @@ const Navbar = () => {
 
 	const [searchInfo, setSearchInfo] = useSelector((state) => state.search.searchInfo);
 	const [isSearch, setIsSearch] = useState(false);
+
 	const dispatchs = useDispatch();
 	const toogleSearch = () => {
 		setIsSearch(!isSearch);
@@ -59,40 +65,61 @@ const Navbar = () => {
 			<div className='navbarContent'>
 				<div className="left">
 					<Link to="/" className="link"><span><img
-						src="https://www.psdstamps.com/wp-content/uploads/2019/12/grunge-movies-label-png-768x512.png"
+						src={logo}
 						alt=""
 						className='logo'
 					/></span></Link>
-					{/* <span>Homepage</span> */}
-					<Link to="/" className="link">
-						<span className="navbarmainLinks">Trang Chủ</span>
-					</Link>
-					<Link to="/series" className="link">
-						<span className="navbarmainLinks">Phim Series</span>
-					</Link>
-					<Link to="/movies" className="link">
-						<span className="navbarmainLinks">Phim</span>
-					</Link>
-					<Link to="/" className="link">
-						<span className="navbarmainLinks">Danh sách của tôi</span>
-					</Link>
-					{/* <span>New and Popular</span>
-					<span>My List</span> */}
+					<div className='dropdown'>
+						<div className='options'>
+							<p>Thể loại </p>
+							<ArrowDropDownIcon />
+						</div>
+						<div className='dropdownContent'>
+							<Link to="/" className="link">
+								<span className="navbarmainLinks">Trang Chủ</span>
+							</Link>
+							<Link to="/series" className="link">
+								<span className="navbarmainLinks">Phim Series</span>
+							</Link>
+							<Link to="/movies" className="link">
+								<span className="navbarmainLinks">Phim</span>
+							</Link>
+							<Link to="/" className="link">
+								<span className="navbarmainLinks">Danh sách của tôi</span>
+							</Link>
+						</div>
+					</div>
 				</div>
 				<div className="right">
-					<div className="searchBox" onClick={toogleSearch}>
+					{/* onClick={toogleSearch} */}
+					<Darkmode/>
+					<div className="searchBox" >
 						<div className="searchInput" >
 							<Link to="/search"><input type='text' placeholder='Tìm kiếm...' value={searchText} onChange={(e) => dispatchs(updateSearch(e.target.value))} /></Link>
 							<p>
-								{searchText === "" ? (<SearchOutlinedIcon className="searchBtn" />) : (<ClearIcon onClick={clearSearchField} className="searchBtn" />)}
+								{searchText === "" ? (<Link to="/search"><SearchOutlinedIcon className="searchBtn" /></Link>) : (<ClearIcon onClick={clearSearchField} className="searchBtn" />)}
 							</p>
 						</div>
 					</div>
 					<div className="dropdownNoti">
-						<NotificationsIcon />
+						<NotificationsIcon className='notiIcon'/>
+						{user.newNotifications.length===0?
+""							:
+							<span className='badge badge-warning' id='lblCartCount'>{user.newNotifications.length}</span>
+						}
 						<div className="notiContent">
-							<div className='notiItem'><img src={user.profilePic} width={50} height={50} alt={user.profilePic} /><p>Nhắc nhở nổi dung mới:(Comming soon)</p></div>
-						</div>
+						{user.newNotifications.length===0 ?
+							<div className='notiItem'><img src=""/><p>Hiện tại không có thông báo nào cả</p></div>
+							:
+							<div>
+							{
+								(user.newNotifications).slice(0,5)?.map((noti) => (
+									<div className='notiItem'><img src=""/><p>Nhắc nhở nổi dung mới:{noti}</p></div>
+								))
+							}
+							</div>
+						}	
+						</div>	
 					</div>
 					<img
 						src={user.profilePic}
@@ -106,11 +133,15 @@ const Navbar = () => {
 								<div className="btnDropDown" onClick={handleOpen}><ExpandLessIcon style={{ width: "20px", height: "20px" }} />
 									{open ?
 										<div className="options">
-											<span>Tài Khoản</span>
-											{user.isAdmin ? <Link to="/admin/">
-												<span >Admin</span>
-											</Link> : ""}
-											<span onClick={Logout}>Đăng Xuất</span>
+
+											<span className='optionsItem'><Link to={{ pathname: "/editProfile/" + user._id + "/info", user }}>Tài Khoản</Link></span>
+											{user.isAdmin ?
+												<Link to="/admin/">
+													<span className='optionsItem'>
+														Admin
+													</span>
+												</Link> : ""}
+											<span className='optionsItem' onClick={Logout}>Đăng Xuất</span>
 										</div> :
 										""}
 								</div>
@@ -119,6 +150,9 @@ const Navbar = () => {
 							</div>}
 					</div>
 				</div>
+				{/* <div className='navbarMobile'>
+					<SideBar/>
+				</div> */}
 			</div>
 		</div>
 	);

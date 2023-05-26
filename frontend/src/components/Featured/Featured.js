@@ -1,10 +1,11 @@
 import React, { useEffect ,useState} from 'react';
 import "./Featured.scss";
 import axios from 'axios';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import "./Featured.scss";
 import { Link } from 'react-router-dom';
+import Slider from '../Slider/Slider';
 
 const Featured = ({ type,setGenre }) => {
 	const [content, setContent] = useState({});
@@ -56,14 +57,10 @@ const Featured = ({ type,setGenre }) => {
 					</div>
 				)
 			}
-			<img alt="" src={content.img}/>
-			<div className="info">
-				<h1>{content.title}</h1>
-				<h2 className="desc">
-					{content.desc}
-				</h2>
-			</div>
 
+			<div className='showSlider'>
+				<Slider />
+			</div>
 		</div>
 	);
 };

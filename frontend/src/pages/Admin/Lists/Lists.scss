@@ -1,49 +1,67 @@
 .lists {
-  background-color: rgb(25, 28, 36);
-  display: flex;
-  margin: 2%;
-  width: 93%;
-  height:93%;
-  justify-content: center;
-  border-radius: 10px;
-  font-weight: 400;
-  font-size: 1.1rem;
-  table{
-    margin: 1%;
-    border: 1px solid black;
-    tr{
-      height: 65px;
-    }
-    td{
-      text-align: center;
-      border-top: 1px solid black;
-      // border-right: 1px solid black;
-      // border-left: 1px solid black;
-      .btn{
-        width: 50px;
-        height: 25px;
-        border: none;
-        border-radius: 6px;
-        margin: 5px;
+  width: min(900px, 100% - 3rem);
+  margin-inline: auto;
+  .table-list-container {
+    max-width: 100%;
+    table {
+      width: 100%;
+      background: rgb(20, 20, 20);
+      border-collapse: collapse;
+      line-height: 1.5;
+      font-size: 1.25rem;
+      th,
+      td {
+        text-align: center;
       }
-      .btnEdit{
-        background-color: rgb(1,128,254);
+      caption,
+      th,
+      td {
+        color: #eee;
+        padding: 1rem;
       }
-      .btnDelete{
-        background-color: rgb(227,35,34);
-
+      caption {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
       }
-      img{
-        background-repeat: no-repeat;
-        width: 50px;
-        height: 50px;
+      th {
+        background: hsl(0 0% 0% / 0.5);
       }
-    }
-    th{
-      color:white;
-      background-color: rgb(20, 20, 20);
-      padding: 20px 50px;
     }
   }
+}
 
+@media screen and (max-width: 37.5rem) {
+  th {
+    display: none;
+  }
+  td {
+    display: grid;
+    grid-template-columns: 15ch auto;
+    padding: 0.5rem 1rem;
+  }
+  td:last-child {
+    padding-bottom: 2rem;
+  }
+  td::before {
+    content: attr(data-cell) ": ";
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .btnDelete {
+    width: 10%;
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  .btnDelete {
+    width: 10%;
+    justify-self: center;
+  }
 }

@@ -8,7 +8,7 @@
         
         width: 100%;
         height: 100vh;
-        background-image: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW92aWUlMjB0aGVhdGVyfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+        background-image: url("https://images.pexels.com/photos/342003/pexels-photo-342003.jpeg");
         background-position: center;
         background-repeat: none;
         background-size: cover;
@@ -28,7 +28,7 @@
                 display: flex;
                 align-items: center;
             }
-            .formLogin{
+            .formRegis{
                 background-color: rgba(15, 15, 15, 0.85);
                 padding: 60px 68px 40px;
                 margin: 0 auto;
@@ -108,3 +108,31 @@
         }
     }
 }
+/*  Mobie: width <740px */
+@media only screen and (max-width: 46.1875em) {
+    .login{
+        .formRegis{
+            width: 70% !important;
+        }
+    }
+
+}
+
+/* Tablet: width >=740px  and width <1024px */
+@media only screen and (min-width: 46.25em) and (max-width:64em){
+    .login{
+        .formRegis{
+            width: 50% !important;
+        }
+    }
+}
+
+/* PC :width >= 1024px */
+@media only screen and (min-width: 64em) and (max-width:74em){
+    .login{
+        .formRegis{
+            width: 40% !important;
+        }
+    }
+}
+

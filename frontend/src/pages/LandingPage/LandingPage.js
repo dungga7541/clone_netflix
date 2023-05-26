@@ -3,9 +3,10 @@ import "./LandingPage.scss";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import videodevice from "../../assets/video/video-devices-vn.m4v";
 import { Link } from 'react-router-dom';
-import logo from "../../assets/image/grunge-movies-label-png.png";
-import imgOnScreen from "./../../assets/video/yt1s.com - Kdrama Pinocchio Trailer.mp4" 
-
+import logo from "../../assets/image/logo.png";
+import imgOnScreen from "./../../assets/video/yt1s.com - Kdrama Pinocchio Trailer.mp4"
+import Footer from './../../components/Footer/Footer';
+import KeyboardDoubleArrowRightTwoToneIcon from '@mui/icons-material/KeyboardDoubleArrowRightTwoTone';
 
 const LandingPage = () => {
 
@@ -18,46 +19,41 @@ const LandingPage = () => {
 							<Link to="/vn/">
 								<img
 									className="logo"
-									src="https://www.psdstamps.com/wp-content/uploads/2019/12/grunge-movies-label-png-768x512.png"
+									src={logo}
 									alt=""
 									width={170}
 									height={90}
 								/></Link>
-							<div>
+							<div className='actionButtons'>
 								<button className="loginButton" ><Link to="/vn/login">Đăng Nhập</Link></button>
 								<button className="loginButton" ><Link to="/vn/register">Đăng Kí</Link></button>
 							</div>
 						</div>
 						<div className='bottom'>
-							<p className='mainTitle'>Xem phim không giới hạn , nhiều hơn thế nữa.</p>
-							<p className='subTitle'>Có thể xem ở bất cứ đâu, bất kì nơi nào</p>
+							<p className='mainTitle'>Chào mừng đến với CocoMovie<span></span></p>
+							<p className='subTitle'>Bạn có thể xem phim ở bất cứ đâu</p>
 							<p className='otherTitle'>
 								Xem những bộ phim và nhận những thông báo mới nhất.
 							</p>
-							<div className="searchBar">
-								<input type="email" placeholder="email address" />
-								<button className="registerButton" >
-									Nhận thông báo <ArrowForwardIosIcon />
-								</button>
-							</div>
+							<button className="registerButton" >
+								Xem thêm <KeyboardDoubleArrowRightTwoToneIcon />
+							</button>
 						</div>
 					</div>
 				</div>
 				<div className='secondContainer'>
 					<div className='title'>
-						<p className='mainTitle'>Thưởng thức trên TV của bạn.</p>
-						<p className='subTitle'>Xem trên TV thông minh , Playstation,Xbox,Chromecast ,Apple TV,Đầu phát Blu-ray và nhiều thiết bị khác.</p>
+					
+						<p className='mainTitle'>Về chúng tôi</p>
+						<p className='subTitle'>Cocomovie là một nền tảng toàn cầu với các tính năng hàng đầu cho phép người dùng từ khắp nơi trên thế giới có thể xem phim và theo dõi những bộ phim sắp phát sóng.</p>
 					</div>
 					<div className='slideVideo'>
-						<video width="450" height="400"  autoPlay muted loop>
-							<source src={imgOnScreen} type="video/mp4" />
-						</video>
-						<img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt=""/>
+						<img src="https://amc-theatres-res.cloudinary.com/image/upload/v1634244658/amc-cdn/general/on-demand/_2021/refresh/rev/VOD_1022_Q22021ATODRefresh_LandingPageZones_Parallax_PlaceForMoviesMobile.jpg" alt="" width={600} height={400}/>
 					</div>
 				</div>
 				<div className='thirdContainer'>
 					<div className='imgDowload'>
-						<img src="https://img.freepik.com/free-vector/elegant-retro-film-strip-design-black-background_1017-42670.jpg" alt=""/>
+						<img src="https://img.freepik.com/free-vector/elegant-retro-film-strip-design-black-background_1017-42670.jpg" alt="" />
 
 					</div>
 					<div className='titleDowload'>
@@ -65,28 +61,57 @@ const LandingPage = () => {
 						<p className='subTitle'>Lưu lại những nội dung yêu thích  một cách dễ dàng và luôn có thứ để xem.</p>
 					</div>
 				</div>
+				<div className='fiveContainer'>
+					<div className='title'>
+						<p className='mainTitle'>Dịch vụ của chúng tôi</p>
+					</div>
+					<div className='ourServices'>
+						<div className='serviceItem'>
+							<img src='https://static.vecteezy.com/system/resources/previews/004/985/888/original/friends-watching-films-flat-illustration-boys-girl-in-3d-glasses-enjoy-tv-series-movie-at-home-students-eating-popcorn-isolated-cartoon-characters-with-outline-elements-on-white-background-vector.jpg' width={120} height={120}/>
+							<div className='infoService'>
+								<p>Xem phim cùng bạn bè ở mọi nơi</p>
+							</div>
+						</div>
+						<div className='serviceItem'>
+							<img src='https://cdn-icons-png.flaticon.com/512/4221/4221927.png' width={120} height={120} style={{background:"white",padding:"0 20px"}}/>
+							<div className='infoService'>
+								<p>Không giới hạn phim và truyền hình</p>
+							</div>
+						</div>
+						<div className='serviceItem'>
+							<img src='https://static.vecteezy.com/system/resources/previews/004/985/888/original/friends-watching-films-flat-illustration-boys-girl-in-3d-glasses-enjoy-tv-series-movie-at-home-students-eating-popcorn-isolated-cartoon-characters-with-outline-elements-on-white-background-vector.jpg' width={120} height={120}/>
+							<div className='infoService'>
+								<p>Watch any movie with your friend</p>
+							</div>
+						</div>
+						<div className='serviceItem'>
+							<img src='https://static.vecteezy.com/system/resources/previews/004/985/888/original/friends-watching-films-flat-illustration-boys-girl-in-3d-glasses-enjoy-tv-series-movie-at-home-students-eating-popcorn-isolated-cartoon-characters-with-outline-elements-on-white-background-vector.jpg' width={120} height={120}/>
+							<div className='infoService'>
+								<p>Watch any movie with your friend</p>
+							</div>
+						</div>
+						<div className='serviceItem'>
+							<img src='https://static.vecteezy.com/system/resources/previews/004/985/888/original/friends-watching-films-flat-illustration-boys-girl-in-3d-glasses-enjoy-tv-series-movie-at-home-students-eating-popcorn-isolated-cartoon-characters-with-outline-elements-on-white-background-vector.jpg' width={120} height={120}/>
+							<div className='infoService'>
+								<p>Watch any movie with your friend</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div className='fourContainer'>
 					<div className='title'>
-						<p className='mainTitle'>Xem ở mọi nơi.</p>
-						<p className='subTitle'>Phát trực tuyến không giới hạn phim và chương trình truyền hình trên điện thoại, máy tính bảng, máy tính xách tay và TV.</p>
+						<p className='mainTitle'>Đối tác của chúng tôi</p>
 					</div>
-					<div className='slideVideo'>
-						<video width="450" height="400"  autoPlay muted loop>
-							<source src={videodevice} type="video/mp4" />
-						</video>
-						<img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-vn.png" alt=""/>
-					</div>
-				</div>
-				<div className='fiveContainer'>
-					<div className='imgDowload'>
-						<img src="https://occ-0-395-58.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABbtRHxTEgmwtFXR4vBnwSO9UzWSascscH0PRpGcXYVkyVez31FciwrQ4bmD41KIrsypJG4Bf54yOJL82SDLL54SGCIdZov0ySklR.png?r=df6" alt=""/>
-
-					</div>
-					<div className='titleDowload'>
-						<p className='mainTitle'>Tạo hồ sơ cho trẻ em</p>
-						<p className='subTitle'>Đưa các em vào những cuộc phiêu lưu với nhân vật được yêu thích trong một không gian riêng. Tính năng này đi kèm miễn phí với tư cách thành viên của bạn.</p>
+					<div className='ourPartner'>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="logoNetflix" width={200} height={200}/>
+						<img src="https://download.logo.wine/logo/Hulu/Hulu-Logo.wine.png" alt="logoNetflix" width={200} height={200}/>
+						<img src="https://www.logo.wine/a/logo/Disney%2B/Disney%2B-Logo.wine.svg" alt="logoNetflix" width={200} height={200}/>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png" alt="logoNetflix" width={200} height={200}/>
+						<img src="https://images.squarespace-cdn.com/content/v1/568e527c9cadb62c8908ea62/1578944352173-5IP340QWHWXHWIFNQ8H7/Vudu_2014_logo.svg.png" alt="logoNetflix" width={200} height={200}/>
 					</div>
 				</div>
+				<Footer/>
 			</div>
 		</div>
 	);

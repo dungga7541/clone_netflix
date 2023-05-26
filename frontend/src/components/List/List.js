@@ -13,10 +13,8 @@ const List = ({ list }) => {
 			<div className="wrapper">
 
 				<div className="container" >
-					{list.content.slice(0, 8).map((item, i) => (
+					{list.content.slice(0, 6).map((item, i) => (
 						<ListItem key={i} index={i} item={item} />
-
-
 					))}
 				</div>
 			</div>
